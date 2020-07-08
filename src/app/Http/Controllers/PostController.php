@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use \App\Post;
+use \App\Tag;
 
 class PostController extends Controller
 {
@@ -27,12 +28,29 @@ class PostController extends Controller
 
         $path = $request->file('image')->store('public/img');
 
+        preg_match_all('/#([a-zA-Z0-9０-９ぁ-んァ-ヶー一-龠]+)/u', $request->content, $match);
+        
+        $tags = [];
+        foreach ($match[1] as $tag) {
+            $found = Tag::firstOrCreate(['name' => $tag]);
+
+            array_push($tags, $found);
+        }
+
+        $tag_ids = [];
+
+        foreach ($tags as $tag) {
+            array_push($tag_ids, $tag['id']);
+        }
+
         Post::create([
             'user_id' => Auth::user()->id,
             'title' => $request->title,
             'image' => basename($path),
             'content' => $request->content,
         ]);
+
+        $post->tags()->attach($tag_ids);
         
         return redirect()->route('top');
     }
