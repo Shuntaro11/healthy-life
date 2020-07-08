@@ -106,7 +106,6 @@ abbr[title],
 abbr[data-original-title],
 
 address {
-  margin-bottom: 1rem;
   font-style: normal;
   line-height: inherit;
 }
@@ -10890,7 +10889,6 @@ a.text-dark:focus {
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
-  line-height: 1;
 }
 
 .fa-lg {

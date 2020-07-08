@@ -21,10 +21,16 @@
                     </div>
                     <div class="post-title">{{ $post->title }}</div>
                     <div class="post-content">{!! nl2br(e($post->content)) !!}</div>
+                    <div class="post-tags">
+                        @foreach($post->tags as $tag)
+                            <a href="/">#{{ $tag->name }}</a>
+                        @endforeach
+                    </div>
                     <div class="under-bar">
-                        <a href="/" ><i class="far fa-heart like-button"></i></a>
-                        <div class="post-date">{{ $post->created_at->format('Y/m/d H:i:s') }}</div>
-                        <hr>
+                        <div class="like-bar">
+                            <a href="/" ><i class="far fa-heart like-button"></i></a>
+                            <p class="post-date">{{ $post->created_at->format('Y/m/d H:i:s') }}</p>
+                        </div>
                         <div>
                             @auth
                                 <form class="comment-form" action="">

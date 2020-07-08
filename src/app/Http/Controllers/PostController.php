@@ -43,13 +43,13 @@ class PostController extends Controller
             array_push($tag_ids, $tag['id']);
         }
 
-        Post::create([
-            'user_id' => Auth::user()->id,
-            'title' => $request->title,
-            'image' => basename($path),
-            'content' => $request->content,
-        ]);
-
+        $post = new Post;
+        $post->user_id = Auth::user()->id;
+        $post->title = $request->title;
+        $post->image = basename($path);
+        $post->content = $request->content;
+        
+        $post->save();
         $post->tags()->attach($tag_ids);
         
         return redirect()->route('top');
