@@ -1,0 +1,14 @@
+/* 共通部分 */
+@import 'general.css';
+
+/* トップ画面 */
+@import 'top.css';
+
+/* ユーザー詳細画面 */
+@import 'user_show.css';
+
+/* ヘッダー  */
+@import 'header.css';
+
+/* フッター */
+@import 'footer.css';

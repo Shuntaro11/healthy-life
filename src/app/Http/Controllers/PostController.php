@@ -20,15 +20,18 @@ class PostController extends Controller
 
     public function store(Request $request){
         $validator = $request->validate([
-            'content' => ['required', 'string', 'max:300'],
+            'title' => ['required', 'string', 'max:30'],
             'image' => ['required', 'file', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
+            'content' => ['required', 'string', 'max:300'],
         ]);
+        
         $path = $request->file('image')->store('public/img');
 
         Post::create([
             'user_id' => Auth::user()->id,
-            'content' => $request->content,
+            'title' => $request->content,
             'image' => basename($path),
+            'content' => $request->content,
         ]);
         
         return redirect()->route('top');

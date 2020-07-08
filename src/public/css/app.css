@@ -1,4 +1,19 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);
+
+/* 共通部分 */
+@import 'general.css';
+
+/* トップ画面 */
+@import 'top.css';
+
+/* ユーザー詳細画面 */
+@import 'user_show.css';
+
+/* ヘッダー  */
+@import 'header.css';
+
+/* フッター */
+@import 'footer.css';
 
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
@@ -157,7 +172,6 @@ sup {
 }
 
 a {
-  color: #3490dc;
   text-decoration: none;
   background-color: transparent;
   cursor: pointer;
@@ -4388,7 +4402,6 @@ input[type=button].btn-block {
 
 .nav-link {
   display: block;
-  padding: 0.5rem 1rem;
 }
 
 .nav-link:hover,

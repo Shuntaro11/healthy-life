@@ -5,6 +5,7 @@
                 <form action="/posts" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                     <div>
+                        <div><input type="text" name="title"></div>
                         <div><input type="file" name="image"></div>
                         <div><textarea name="content" cols="30" rows="10" placeholder="300字以内で入力"></textarea></div>
                         @foreach ($errors->all() as $error)

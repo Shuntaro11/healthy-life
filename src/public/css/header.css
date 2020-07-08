@@ -1,0 +1,30 @@
+.header-container{
+  width: 100vw;
+  box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.1);
+  padding-top: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  margin-bottom: 50px;
+}
+.top-title{
+  font-family: 'Galada', cursive;
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 100px;
+  color: white;
+  background: -webkit-linear-gradient(0deg, #ffdc42, #ff2121, #8c00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  box-shadow: 0 10px 0.5 5px rgba(0,0,0,0.4);
+}
+.auth-nav{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 50px;
+}
+.welcome-message{
+  text-align: center;
+  font-size: 15px;
+  line-height: 30px;
+  margin-right: 10px;
+}
