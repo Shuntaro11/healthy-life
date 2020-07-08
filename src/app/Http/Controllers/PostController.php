@@ -24,12 +24,12 @@ class PostController extends Controller
             'image' => ['required', 'file', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
             'content' => ['required', 'string', 'max:300'],
         ]);
-        
+
         $path = $request->file('image')->store('public/img');
 
         Post::create([
             'user_id' => Auth::user()->id,
-            'title' => $request->content,
+            'title' => $request->title,
             'image' => basename($path),
             'content' => $request->content,
         ]);

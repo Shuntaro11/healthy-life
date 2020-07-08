@@ -6,13 +6,13 @@
   margin-bottom: 50px;
 }
 .top-title{
-  font-family: 'Galada', cursive;
+  font-family: 'Bangers', cursive;
   width: 500px;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   text-align: center;
   font-size: 100px;
   color: white;
-  background: -webkit-linear-gradient(0deg, #ffdc42, #ff2121, #8c00ff);
+  background: -webkit-linear-gradient(0deg, #ff9900, #ffdc42);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   box-shadow: 0 10px 0.5 5px rgba(0,0,0,0.4);

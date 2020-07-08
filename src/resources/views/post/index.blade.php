@@ -19,6 +19,7 @@
                         </div>
                         <a href="/users/{{$post->user->id}}" class="user-link"><i class="fas fa-user"></i></a>
                     </div>
+                    <div class="post-title">{{ $post->title }}</div>
                     <div class="post-content">{!! $post->content !!}</div>
                     <div class="under-bar">
                         <a href="/" ><i class="far fa-heart like-button"></i></a>

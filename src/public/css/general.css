@@ -39,7 +39,13 @@ a{
   bottom: 20px;
   left: 10vw;
 }
-
+.nav-bar a{
+  text-align: center;
+}
 .nav-bar i{
   font-size: 50px;
+}
+.nav-bar p{
+  font-size: 12px;
+  margin-top: 5px;
 }
