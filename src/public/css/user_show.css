@@ -1,0 +1,31 @@
+.show-user-name{
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+.show-user-image-wrapper{
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  border-radius: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.user-post-index{
+  width: 90vw;
+  margin: 60px auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.user-post-image-wrapper{
+  width: 30vw;
+  height: 30vw;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.user-edit-link{
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 10px auto;
+  width: 200px;
+  text-align: center;
+  border-radius: 3px;
+  font-size: 15px;
+}

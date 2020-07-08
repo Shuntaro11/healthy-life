@@ -1,0 +1,119 @@
+.each-post{
+  margin: 80px auto;
+  display: flex;
+  width: 70vw;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+}
+.image-wrapper{
+  position: relative;
+  overflow: hidden;
+}
+.post-image-wrapper{
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  width: 40vw;
+  height: 40vw;
+}
+.inside-image{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.right-box{
+  width: 30vw;
+}
+.top-bar{
+  height: 80px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+.user-info{
+  display: flex;
+}
+.user-image-wrapper{
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  margin-top: 10px;
+  margin-right: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.user-name{
+  font-weight: bold;
+  line-height: 80px;
+  font-size: 20px;
+  overflow: hidden;
+}
+.user-link{
+  margin-top: 20px;
+  height: 40px;
+  width: 70px;
+  background-color: deepskyblue;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  border-bottom: solid 1px royalblue;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+}
+.user-link:hover{
+  background-color: steelblue;
+}
+.user-link i{
+  font-size: 20px;
+  color: white;
+  line-height: 40px;
+}
+.post-content{
+  padding: 20px;
+  width: 30vw;
+  height: calc(40vw - 200px);
+}
+.under-bar{
+  height:120px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+.like-button{
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.post-date{
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: rgb(128, 128, 128);
+}
+.comment-form{
+  margin-top: 10px;
+  display: flex;
+}
+.comment-input{
+  width: 75%;
+  border: 1px solid rgba(0, 0, 0, 0.247);
+  font-size: 13px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 3px;
+  vertical-align : middle;
+  padding-left: 5px;
+}
+.comment-btn{
+  width: 23%;
+  height: 30px;
+  vertical-align : middle;
+  border: 1px solid rgba(0, 0, 0, 0.247);
+  background-color: whitesmoke;
+  color: steelblue;
+  font-size: 13px;
+  border-radius: 3px;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+}
+.comment-input-guest{
+  font-size: 11px;
+}

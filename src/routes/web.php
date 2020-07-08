@@ -11,10 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PostController@index')->name('top');
+
+Route::put('users', 'UserController@update');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('posts', 'PostController')->only(['create', 'store', 'show']);
+Route::resource('users', 'UserController')->only(['show', 'edit']);
