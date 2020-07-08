@@ -20,7 +20,7 @@
                         <a href="/users/{{$post->user->id}}" class="user-link"><i class="fas fa-user"></i></a>
                     </div>
                     <div class="post-title">{{ $post->title }}</div>
-                    <div class="post-content">{!! $post->content !!}</div>
+                    <div class="post-content">{!! nl2br(e($post->content)) !!}</div>
                     <div class="under-bar">
                         <a href="/" ><i class="far fa-heart like-button"></i></a>
                         <div class="post-date">{{ $post->created_at->format('Y/m/d H:i:s') }}</div>
