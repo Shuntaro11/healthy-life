@@ -69,7 +69,7 @@ class PostController extends Controller
         $post->save();
         $post->tags()->attach($tag_ids);
         
-        return redirect()->route('top');
+        return redirect('/');
     }
 
     public function show(Post $post)

@@ -1,13 +1,15 @@
 @extends('template')
     <body>
         @include("header")
-
         <form action="{{ route('posts.search') }}" method="get" class="search-form">
             <input type="text" class="search-input" placeholder="検索" name="search">
             <button class="search-btn" type="submit">
                 <i class="fas fa-search"></i>
             </button>
         </form>
+        <div id="app">
+            <example-component></example-component>
+        </div>
         @isset($search_result)
             <div class="search_result">{{ $search_result }}</div>
         @endisset
@@ -72,6 +74,6 @@
         </div>
         @include("nav-bar")
         @include("footer")
-        
+        <script src="{{ asset('js/app.js') }}" defer></script>
     </body>
 </html>
