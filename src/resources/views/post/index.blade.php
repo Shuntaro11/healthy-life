@@ -23,7 +23,7 @@
                     <div class="post-content">{!! nl2br(e($post->content)) !!}</div>
                     <div class="post-tags">
                         @foreach($post->tags as $tag)
-                            <a href="/">#{{ $tag->name }}</a>
+                            <a href="{{ route('top', ['name' => $tag->name]) }}">#{{ $tag->name }}</a>
                         @endforeach
                     </div>
                     <div class="under-bar">
@@ -53,5 +53,6 @@
         </div>
         @include("nav-bar")
         @include("footer")
+        
     </body>
 </html>

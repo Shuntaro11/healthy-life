@@ -11,8 +11,20 @@ use \App\Tag;
 class PostController extends Controller
 {
     public function index(){
-        $posts = Post::latest()->paginate(5);;
-        return view('post.index', compact('posts'));
+
+        $q = \Request::query();
+
+        if(isset($q['name'])){
+
+            $posts = Post::latest()->where('content', "like", "%#{$q['name']}%")->paginate(5);
+            return view('post.index', compact('posts'));
+
+        }else {
+
+            $posts = Post::latest()->paginate(5);;
+            return view('post.index', compact('posts'));
+        }
+
     }
 
     public function create(){
