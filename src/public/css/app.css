@@ -22,6 +22,18 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
+body {
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  color: #212529;
+}
+
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 :root {
   --blue: #3490dc;
   --indigo: #6574cd;
@@ -59,11 +71,7 @@
   box-sizing: border-box;
 }
 
-html {
-  font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
+
 
 article,
 aside,
@@ -76,12 +84,6 @@ main,
 nav,
 section {
   display: block;
-}
-
-body {
-  margin: 0;
-  font-family: "Nunito", sans-serif;
-  color: #212529;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -245,8 +247,6 @@ optgroup,
 textarea {
   margin: 0;
   font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
 }
 
 button,
@@ -2623,11 +2623,6 @@ textarea.form-control.is-invalid {
   .btn {
     transition: none;
   }
-}
-
-.btn:hover {
-  color: #212529;
-  text-decoration: none;
 }
 
 .btn:focus,
