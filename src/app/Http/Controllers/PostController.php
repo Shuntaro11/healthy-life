@@ -19,7 +19,7 @@ class PostController extends Controller
 
             $posts = Post::latest()->where('content', "like", "%#{$q['name']}%")->paginate(5);
             $name = $q['name'];
-            $search_result = 'タグ： #' . $q['name'] . ' '. 'の検索結果' . ' ' . $posts->total() . ' ' . '件';
+            $search_result = 'タグ： #' . $q['name'] . ' '. 'のレシピ' . ' ' . $posts->total() . ' ' . '件';
             return view('post.index', compact('posts', 'name', 'search_result'));
 
         }else {
@@ -72,9 +72,8 @@ class PostController extends Controller
         return redirect()->route('top');
     }
 
-    public function show($id)
+    public function show(Post $post)
     {
-        $post = Post::find($id);
         return view('post.show', compact('post'));
     }
 

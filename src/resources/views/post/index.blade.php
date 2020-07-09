@@ -14,7 +14,7 @@
         <div class="main-container">
             @foreach($posts as $post)
                 <div class="each-post">
-                    <a href="/posts/{{$post->id}}">
+                    <a href="{{ route('posts.show', $post->id) }}">
                         <div class="image-wrapper post-image-wrapper">
                             <img class="inside-image" src="{{ asset('/storage/img/'.$post->image) }}">
                         </div>
