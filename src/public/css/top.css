@@ -82,24 +82,42 @@
   width: 30vw;
   height: calc(40vw - 250px);
   font-size: 15px;
+  overflow-y: scroll;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.post-tags{
+  padding: 0 20px;
+  line-height: 40px;
+  height: 40px;
+  font-size: 12px;
+  overflow-y: scroll;
+}
+.post-tags a{
+  background-color: rgba(200, 200, 200, 0.5);
+  padding: 5px;
+  border-radius: 3px;
+}
+.like-bar{
+  display: flex;
+  line-height: 30px;
 }
 .under-bar{
-  height:120px;
+  height:80px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 10px;
+  padding: 5px 10px 10px;
 }
 .like-button{
   font-size: 20px;
   color: rgba(0, 0, 0, 0.5);
+  line-height: 30px;
 }
 .post-date{
-  margin-top: 5px;
-  margin-bottom: 10px;
+  line-height: 30px;
   font-size: 12px;
   color: rgb(128, 128, 128);
+  margin-left: 10px;
 }
 .comment-form{
-  margin-top: 10px;
   display: flex;
 }
 .comment-input{
