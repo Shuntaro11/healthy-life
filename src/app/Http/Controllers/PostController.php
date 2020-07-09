@@ -10,14 +10,17 @@ use \App\Tag;
 
 class PostController extends Controller
 {
-    public function index(){
+    public function index()
+    {
 
         $q = \Request::query();
 
         if(isset($q['name'])){
 
             $posts = Post::latest()->where('content', "like", "%#{$q['name']}%")->paginate(5);
-            return view('post.index', compact('posts'));
+            $name = $q['name'];
+            $search_result = 'タグ： #' . $q['name'] . ' '. 'の検索結果' . ' ' . $posts->total() . ' ' . '件';
+            return view('post.index', compact('posts', 'name', 'search_result'));
 
         }else {
 
@@ -27,11 +30,13 @@ class PostController extends Controller
 
     }
 
-    public function create(){
+    public function create()
+    {
         return view('post.create');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $validator = $request->validate([
             'title' => ['required', 'string', 'max:30'],
             'image' => ['required', 'file', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
@@ -51,7 +56,7 @@ class PostController extends Controller
 
         $tag_ids = [];
 
-        foreach ($tags as $tag) {
+        foreach ($tags as $tag){
             array_push($tag_ids, $tag['id']);
         }
 
@@ -67,8 +72,22 @@ class PostController extends Controller
         return redirect()->route('top');
     }
 
-    public function show($id){
+    public function show($id)
+    {
         $post = Post::find($id);
         return view('post.show', compact('post'));
+    }
+
+    public function search(Request $request)
+    {
+
+        $posts = Post::latest()->where('title', 'like', "%{$request->search}%")
+                ->orWhere('content', 'like', "%{$request->search}%")
+                ->paginate(5);
+
+        $search_query = $request->search;
+        $search_result = '"' . $request->search . '" ' . 'の検索結果' . ' ' . $posts->total() . ' ' .'件';
+
+        return view('post.index', compact('posts', 'search_result', 'search_query'));
     }
 }

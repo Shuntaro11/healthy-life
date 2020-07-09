@@ -2,7 +2,7 @@
     <div class="auth-nav">
         @auth
             <div class="welcome-message">Login : {{Auth::user()->name}}</div>
-            <a class="nav-link" href="/">home</i></a>
+            <a class="nav-link" href="top">home</i></a>
             <a class="nav-link" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
@@ -13,7 +13,7 @@
             </form>
         @else
             <div class="welcome-message">Healthy Lifeへようこそ！</div>
-            <a class="nav-link" href="/">home</i></a>
+            <a class="nav-link" href="top">home</i></a>
             <a class="nav-link" href="{{ route('login') }}">sign in</a>
             @if (Route::has('register'))
                 <a class="nav-link" href="{{ route('register') }}">sign up</a>
