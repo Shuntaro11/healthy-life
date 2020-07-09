@@ -9,7 +9,9 @@ use \App\User;
 
 class UserController extends Controller
 {
-    public function show($id){
+    
+    public function show($id)
+    {
         $user = User::find($id);
         $user_posts = $user->posts()->latest()->get();
         return view('user.show', compact('user', 'user_posts'));
