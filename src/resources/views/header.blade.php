@@ -22,4 +22,10 @@
             @endauth
         </div>
         <div class="top-title">Healthy Life</div>
+        <form action="{{ route('posts.search') }}" method="get" class="search-form">
+            <input type="text" class="search-input" placeholder="レシピ検索" name="search">
+            <button class="search-btn" type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
     </div>

@@ -1,9 +1,10 @@
 .header-container{
   width: 100vw;
   box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.1);
-  padding-top: 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   margin-bottom: 50px;
+  padding-top: 20px;
+  padding-bottom: 30px;
 }
 .top-title{
   font-family: 'Bangers', cursive;
