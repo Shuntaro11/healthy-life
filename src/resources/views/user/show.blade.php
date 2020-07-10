@@ -19,6 +19,14 @@
                 <a href="{{ route('posts.show', $post->id) }}">
                     <div class="image-wrapper user-post-image-wrapper">
                         <img class="inside-image" src="{{ asset('/storage/img/'.$post->image) }}">
+                        <div class="hover-wrap">
+                            <div class="hover-post-title">{{$post->title}}</div>
+                            <div>
+                                @foreach($post->tags as $tag)
+                                <p class="hover-tag">#{{$tag->name}}</p>
+                                @endforeach
+                            </div>
+                        </div>
                     </div>
                 </a>
             @endforeach

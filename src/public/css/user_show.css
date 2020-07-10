@@ -11,14 +11,14 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .user-post-index{
-  width: 90vw;
+  width: 92vw;
   margin: 60px auto;
   display: flex;
   flex-wrap: wrap;
 }
 .user-post-image-wrapper{
-  width: 30vw;
-  height: 30vw;
+  width: 23vw;
+  height: 23vw;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .user-edit-link{
