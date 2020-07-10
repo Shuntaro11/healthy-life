@@ -1,6 +1,7 @@
 @extends('template')
     <body>
         @include("header")
+            <div class="top-title-text">レシピの投稿</div>
             <div class="post-form-container">
                 <form action="/posts" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}

@@ -40,12 +40,13 @@ textarea{
   width: 80vw;
   display: flex;
   justify-content: space-between;
-  background-color: rgba(224, 224, 224, 0.541);
+  background-color: rgba(255, 255, 255, 0.7);
   padding: 3vh 50px;
   border-radius: 10px;
   position: fixed;
   bottom: 20px;
   left: 10vw;
+  border: 1px solid orange;
 }
 .nav-bar a{
   text-align: center;
