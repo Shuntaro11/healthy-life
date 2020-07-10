@@ -5,12 +5,15 @@
                 <form action="/posts" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                     <div>
+                        <p class="post-form-title">レシピタイトル</p>
                         <p class="post-form-notice">料理名を30文字以内で入力してください</p>
-                        <div><input type="text" name="title" placeholder="料理名"></div>
+                        <div class="post-title-wrapper"><input type="text" name="title" placeholder="料理名" class="post-title-input" size="30"></div>
+                        <p class="post-form-title">料理の写真</p>
                         <div><input type="file" name="image"></div>
-                        <p class="post-form-notice">料理概要を2000文字以内で入力してください</p>
-                        <div>
-<textarea name="content" cols="100" rows="20" placeholder="300字以内で入力">
+                        <p class="post-form-title">作り方</p>
+                        <p class="post-form-notice">料理概要を2000文字以内で自由に入力してください</p>
+                        <div class="post-info-wrapper">
+<textarea class="post-info-input" name="content" cols="100" rows="20" placeholder="300字以内で入力">
 [説明]
 
 [材料]
@@ -38,6 +41,7 @@
                 </form>
             </div>
         </div>
+        @include("nav-bar")
         @include("footer")
         </div>
     </body>

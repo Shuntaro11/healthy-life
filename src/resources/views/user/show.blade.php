@@ -26,5 +26,6 @@
 
         @include("nav-bar")
         @include("footer")
+        </div>
     </body>
 </html>

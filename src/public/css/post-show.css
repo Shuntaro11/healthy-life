@@ -1,3 +1,30 @@
+.post-form-container{
+  text-align: center;
+}
+.post-title-input{
+  width: 400px;
+  line-height: 40px;
+  background-color: lightyellow;
+  border: 1px solid dimgray;
+  border-radius: 3px;
+}
+.post-info-input{
+  background-color: lightyellow;
+  border: 1px solid dimgray;
+  border-radius: 3px;
+}
+.post-form-title{
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 20px;
+  color: darkorange;
+  margin-bottom: 5px;
+}
+.post-form-notice{
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 5px;
+}
 .like-box{
   display: flex;
 }
@@ -20,8 +47,4 @@
 .like-count{
   font-size: 15px;
   line-height: 30px;
-}
-.post-form-notice{
-  font-size: 11px;
-  color: #666;
 }
