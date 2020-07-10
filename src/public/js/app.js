@@ -37605,7 +37605,9 @@ var render = function() {
           [_c("i", { staticClass: "far fa-heart like-button" })]
         ),
         _vm._v(" "),
-        _c("p", { staticClass: "like-count" }, [_vm._v(_vm._s(_vm.likeCount))])
+        _c("p", { staticClass: "like-count" }, [
+          _vm._v(_vm._s(_vm.likeCount) + " 件")
+        ])
       ])
     : _c("div", { staticClass: "like-box" }, [
         _c(
@@ -37622,7 +37624,9 @@ var render = function() {
           [_c("i", { staticClass: "fas fa-heart like-button un-like-button" })]
         ),
         _vm._v(" "),
-        _c("p", { staticClass: "like-count" }, [_vm._v(_vm._s(_vm.likeCount))])
+        _c("p", { staticClass: "like-count" }, [
+          _vm._v(_vm._s(_vm.likeCount) + " 件")
+        ])
       ])
 }
 var staticRenderFns = []
