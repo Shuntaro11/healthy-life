@@ -1,7 +1,6 @@
 @extends('template')
     <body>
         @include("header")
-
         <form action="{{ route('posts.search') }}" method="get" class="search-form">
             <input type="text" class="search-input" placeholder="検索" name="search">
             <button class="search-btn" type="submit">
@@ -38,7 +37,6 @@
                         </div>
                         <div class="under-bar">
                             <div class="like-bar">
-                                <a href="/" ><i class="far fa-heart like-button"></i></a>
                                 <p class="post-date">{{ $post->created_at->format('Y/m/d H:i:s') }}</p>
                             </div>
                             <div>
@@ -72,6 +70,7 @@
         </div>
         @include("nav-bar")
         @include("footer")
-        
+        </div>
+        <script src="{{ asset('js/app.js') }}" defer></script>
     </body>
 </html>

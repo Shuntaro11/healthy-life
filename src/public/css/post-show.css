@@ -1,0 +1,23 @@
+.like-box{
+  display: flex;
+}
+.like-btn-wrapper{
+  border: none;
+  background: white;
+}
+.like-btn-wrapper:focus {
+	outline:0;
+}
+.like-button{
+  margin-right: 10px;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 30px;
+}
+.un-like-button{
+  color: crimson;
+}
+.like-count{
+  font-size: 15px;
+  line-height: 30px;
+}

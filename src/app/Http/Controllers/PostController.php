@@ -12,7 +12,7 @@ class PostController extends Controller
 {
     public function index()
     {
-
+        
         $q = \Request::query();
 
         if(isset($q['name'])){
@@ -69,12 +69,21 @@ class PostController extends Controller
         $post->save();
         $post->tags()->attach($tag_ids);
         
-        return redirect()->route('top');
+        return redirect('/');
     }
 
     public function show(Post $post)
     {
-        return view('post.show', compact('post'));
+        $defaultCount = count($post->likes);
+
+        $defaultLiked = $post->likes->where('user_id', Auth::user()->id)->first();
+        if(isset($defaultLiked)){
+            $defaultLiked == false;
+        } else {
+            $defaultLiked == true;
+        }
+
+        return view('post.show', compact('post', 'defaultCount', 'defaultLiked'));
     }
 
     public function search(Request $request)

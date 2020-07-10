@@ -17,4 +17,28 @@ class Post extends Model
     public function tags(){
         return $this->belongsToMany('App\Tag');
     }
+
+    public function likes()
+    {
+        return $this->hasMany('App\Like', 'post_id', 'id');
+    }
+
+    public static function defaultLiked($post, $user_auth_id)
+    {
+      $defaultLiked = 0;
+      foreach ($post['likes'] as $key => $like) {
+          if($like['user_id'] == $user_auth_id) {
+            $defaultLiked = 1;
+            break;
+          }
+      }
+
+      if(count($defaultLiked) == 0) {
+            $defaultLiked == false;
+        } else {
+            $defaultLiked == true;
+        }
+
+      return $defaultLiked;
+    }
 }

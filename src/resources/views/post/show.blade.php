@@ -1,6 +1,14 @@
 @extends('template')
     <body>
         @include("header")
+        @auth
+            <like
+                :post-id="{{ json_encode($post->id) }}"
+                :user-id="{{ json_encode(Auth::user()->id) }}"
+                :default-Liked="{{ json_encode($defaultLiked) }}"
+                :default-Count="{{ json_encode($defaultCount) }}"
+            ></like>
+        @endauth
         <div class="each-post">
             <div class="image-wrapper post-image-wrapper">
                 <img class="inside-image" src="{{ asset('/storage/img/'.$post->image) }}">
@@ -16,11 +24,12 @@
                     <a href="/users/{{$post->user->id}}" class="user-link"><i class="fas fa-user"></i></a>
                 </div>
                 <div class="post-content">{!! $post->content !!}</div>
-                <a href="/" ><i class="far fa-heart like-button"></i></a>
-                <a href="/" ><i class="far fa-comment"></i></i></a>
+                
             </div>
         </div>
         @include("nav-bar")
         @include("footer")
+        </div>
+        <script src="{{ asset('js/app.js') }}" defer></script>
     </body>
 </html>
