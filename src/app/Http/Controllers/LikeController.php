@@ -3,11 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Post;
 use App\Like;
 
 class LikeController extends Controller
 {
+    public function index()
+    {
+      $user = Auth::user();
+      $likes = Like::where('user_id', $user->id)->get();
+      $posts = array();
+      foreach ($likes as $like) {
+        $post = Post::where('id', $like->post_id)->get();
+        array_unshift($posts, $post);
+      }
+      return view('like.index', compact('posts'));
+    }
+
     public function like(Post $post, Request $request)
     {
       $like = Like::create(['post_id' => $post->id, 'user_id' => $request->user_id]);
@@ -26,4 +39,5 @@ class LikeController extends Controller
 
       return response()->json(['likeCount' => $likeCount]);
     }
+
 }
