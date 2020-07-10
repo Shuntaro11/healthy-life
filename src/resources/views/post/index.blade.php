@@ -1,14 +1,8 @@
 @extends('template')
     <body>
         @include("header")
-        <form action="{{ route('posts.search') }}" method="get" class="search-form">
-            <input type="text" class="search-input" placeholder="レシピ検索" name="search">
-            <button class="search-btn" type="submit">
-                <i class="fas fa-search"></i>
-            </button>
-        </form>
         @isset($search_result)
-            <div class="search_result">{{ $search_result }}</div>
+            <div class="top-title-text">{{ $search_result }}</div>
         @endisset
         <div class="main-container">
             @foreach($posts as $post)

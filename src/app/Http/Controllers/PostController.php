@@ -12,7 +12,6 @@ class PostController extends Controller
 {
     public function index()
     {
-        
         $q = \Request::query();
 
         if(isset($q['name'])){
@@ -23,9 +22,9 @@ class PostController extends Controller
             return view('post.index', compact('posts', 'name', 'search_result'));
 
         }else {
-
+            $search_result = '新着レシピ！！';
             $posts = Post::latest()->paginate(5);;
-            return view('post.index', compact('posts'));
+            return view('post.index', compact('posts', 'search_result'));
         }
 
     }
