@@ -12,3 +12,6 @@
 
 /* フッター */
 @import 'footer.css';
+
+/* post詳細画面 */
+@import 'post-show.css';

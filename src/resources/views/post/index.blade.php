@@ -7,9 +7,6 @@
                 <i class="fas fa-search"></i>
             </button>
         </form>
-        <div id="app">
-            <example-component></example-component>
-        </div>
         @isset($search_result)
             <div class="search_result">{{ $search_result }}</div>
         @endisset
@@ -40,7 +37,6 @@
                         </div>
                         <div class="under-bar">
                             <div class="like-bar">
-                                <a href="/" ><i class="far fa-heart like-button"></i></a>
                                 <p class="post-date">{{ $post->created_at->format('Y/m/d H:i:s') }}</p>
                             </div>
                             <div>
@@ -74,6 +70,7 @@
         </div>
         @include("nav-bar")
         @include("footer")
+        </div>
         <script src="{{ asset('js/app.js') }}" defer></script>
     </body>
 </html>
