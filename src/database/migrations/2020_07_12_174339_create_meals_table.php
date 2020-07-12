@@ -15,6 +15,16 @@ class CreateMealsTable extends Migration
     {
         Schema::create('meals', function (Blueprint $table) {
             $table->bigIncrements('id');
+            
+            $table->date('ate_at');
+            $table->integer('quantity');
+
+            $table->bigInteger('user_id')->unsigned()->index();
+            $table->bigInteger('food_ingredient_id')->unsigned()->index();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('food_ingredient_id')->references('id')->on('food_ingredients')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
