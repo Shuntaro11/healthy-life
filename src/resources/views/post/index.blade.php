@@ -41,7 +41,7 @@
                                     </form>
                                 @else
                                     <div class="comment-form">
-                                        <p class="comment-input comment-input-guest">ログイン後いいねやコメントができます</p>
+                                        <p class="comment-input comment-input-guest">ログイン後コメントができます</p>
                                         <button class="comment-btn">・・・</button>
                                     </div>
                                 @endauth
