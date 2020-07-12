@@ -44,8 +44,9 @@ class FoodIngredientsTableSeeder extends Seeder
                 "vitamin_b12" => $line[17],
                 "folic_acid" => $line[18],
                 "vitamin_c" => $line[19],
-                "salt" => $line[20s],
+                "salt" => $line[20],
                 "created_at" => $now,
+                "updated_at" => $now,
             ];
         }
 
