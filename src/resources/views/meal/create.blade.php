@@ -1,18 +1,25 @@
 @extends('template')
     <body>
         @include("header")
-        <form action="/posts" method="post" enctype="multipart/form-data">
-                {{ csrf_field() }}
-                    <div>
-                        <input name="date" type="date" value={{$today}}>
-                        <button type="submit">投稿</button>
-                    </div>
-                    @if($errors->first('post'))
-                        <p>※{{$errors->first('post')}}</p>
-                    @endif
-                </form>
+        <div class="page-title">食べたもの管理</div>
+        <div class="post-form-container">
+            <form action="/meals" method="post" enctype="multipart/form-data">
+            {{ csrf_field() }}
+                <div>
+                    <p class="form-title">食べたものを登録する</p>
+                    <p class="form-label">日付</p>
+                    <div><input type="date" name="date" value={{$today}} class="post-input input-date"></div>
+                    <p class="form-label">食材</p>
+                    <food-name-search></food-name-search>
+                    <p class="form-label">量(g)</p>
+                    <div><input type="number" name="amount" class="post-input input-amount"></div>
+                    <button type="submit">投稿</button>
+                </div>
+            </form>
+        </div>
         @include("nav-bar")
         @include("footer")
         </div>
+        <script src="{{ asset('js/app.js') }}" defer></script>
     </body>
 </html>

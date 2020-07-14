@@ -1,7 +1,7 @@
 @extends('template')
   <body>
         @include("header")
-        <div class="top-title-text">いいねしたレシピ一覧</div>
+        <div class="page-title">いいねしたレシピ一覧</div>
         <div class="user-post-index">
             @foreach($posts as $post)
                 <a href="/">
