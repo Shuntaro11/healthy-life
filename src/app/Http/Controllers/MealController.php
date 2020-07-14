@@ -7,12 +7,29 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use \App\Meal;
 use \App\FoodIngredient;
+use Carbon\Carbon;
 
 class MealController extends Controller
 {
     public function create()
     {
-        $today = date("Y-m-d");
+        $todaysEnergy = 0;
+        $yesterdaysEnergy = 0;
+        $today = Carbon::now()->format("Y-m-d");
+        $todaysMeal = Meal::where('ate_at', "{$today}")->get();
+        foreach ($todaysMeal as $meal) {
+            $calculationQuantity = $meal->quantity/100;
+            $todaysEnergy += ($meal->food_ingredient->energy_kcal * $calculationQuantity);
+        }
+        dd($todaysEnergy);
+
+        $yesterday = Carbon::now()->subDay()->format("Y-m-d");
+        $yesterdaysMeal = Meal::where('ate_at', "{$yesterday}")->get();
+        foreach ($yesterdaysMeal as $meal) {
+            $yesterdaysEnergy += $meal->food_ingredient->energy_kcal;
+        }
+        
+
         return view('meal.create', compact('today'));
     }
 
