@@ -2,7 +2,7 @@
     <body>
         @include("header")
         @isset($search_result)
-            <div class="top-title-text">{{ $search_result }}</div>
+            <div class="page-title">{{ $search_result }}</div>
         @endisset
         <div class="main-container">
             @foreach($posts as $post)

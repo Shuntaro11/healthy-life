@@ -22,3 +22,4 @@ Auth::routes();
 Route::resource('posts', 'PostController')->only(['create', 'store', 'show']);
 Route::resource('users', 'UserController')->only(['show', 'edit']);
 Route::resource('likes', 'LikeController')->only(['index']);
+Route::resource('meals', 'MealController')->only(['create', 'store']);

@@ -41,4 +41,9 @@ class Post extends Model
 
       return $defaultLiked;
     }
+
+    public function meals()
+    {
+        return $this->hasMany('App\Meal', 'post_id', 'id');
+    }
 }
