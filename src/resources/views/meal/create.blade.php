@@ -13,7 +13,7 @@
                     <food-name-search></food-name-search>
                     <p class="form-label">量(g)</p>
                     <div><input type="number" name="amount" class="post-input input-amount"></div>
-                    <button type="submit">投稿</button>
+                    <button type="submit">登録</button>
                 </div>
             </form>
         </div>

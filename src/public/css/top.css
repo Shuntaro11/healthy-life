@@ -20,8 +20,9 @@
 .page-title{
   text-align: center;
   margin-top: 20px;
-  font-size: 25px;
+  font-size: 30px;
   font-weight: bold;
+  color: darkorange;
 }
 .each-post{
   margin: 0 auto 70px;

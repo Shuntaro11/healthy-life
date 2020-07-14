@@ -62,6 +62,12 @@ textarea{
   margin-top: 50px;
 }
 
+.form-title{
+  font-size: 25px;
+  margin-top: 20px;
+}
+
+
 .selected-food-display{
   width: 400px;
   height: 40px;
