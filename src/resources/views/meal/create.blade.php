@@ -8,11 +8,11 @@
                 <div>
                     <p class="form-title">食べたものを登録する</p>
                     <p class="form-label">日付</p>
-                    <div><input type="date" name="date" value={{$today}} class="post-input input-date"></div>
+                    <div><input type="date" name="ate_at" value={{$today}} class="post-input input-date"></div>
                     <p class="form-label">食材</p>
                     <food-name-search></food-name-search>
                     <p class="form-label">量(g)</p>
-                    <div><input type="number" name="amount" class="post-input input-amount"></div>
+                    <div><input type="number" name="quantity" class="post-input input-quantity"></div>
                     <button type="submit">登録</button>
                 </div>
             </form>
