@@ -24,7 +24,7 @@ class MealController extends Controller
             'food_name' => ['required'],
         ]);
 
-        $food_ingredient = FoodIngredient::where('food_name', 'like', "%{$request->food_name}%")->get();
+        $food_ingredient = FoodIngredient::where('food_name', "{$request->food_name}")->first();
 
         $meal = new Meal;
         $meal->ate_at = $request->ate_at;
@@ -34,6 +34,7 @@ class MealController extends Controller
         
         $meal->save();
 
-        return view('meal.create');
+        $today = date("Y-m-d");
+        return view('meal.create', compact('today'));
     }
 }
