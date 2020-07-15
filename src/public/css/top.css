@@ -26,11 +26,58 @@
 }
 .each-post{
   margin: 0 auto 70px;
-  display: flex;
   width: 50vw;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
   background: white;
+}
+.top-bar{
+  height: 80px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+.user-info{
+  display: flex;
+  line-height: 80px;
+}
+.user-image-wrapper{
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  margin-top: 10px;
+  margin-right: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.user-name{
+  font-weight: bold;
+  line-height: 80px;
+  font-size: 15px;
+  overflow: hidden;
+}
+.user-link{
+  margin-top: 25px;
+  height: 30px;
+  width: 50px;
+  background-color: darkorange;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  border-bottom: solid 1px peru;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+}
+.user-link:hover{
+  background-color: chocolate;
+}
+.user-link i{
+  font-size: 15px;
+  color: white;
+  line-height: 30px;
+}
+.post-main-container{
+  display: flex;
+  width: 50vw;
 }
 .image-wrapper{
   position: relative;
@@ -82,50 +129,6 @@
 .right-box{
   width: 20vw;
 }
-.top-bar{
-  height: 80px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-between;
-  padding: 0 15px;
-}
-.user-info{
-  display: flex;
-  line-height: 80px;
-}
-.user-image-wrapper{
-  width: 60px;
-  height: 60px;
-  border-radius: 100%;
-  margin-top: 10px;
-  margin-right: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-.user-name{
-  font-weight: bold;
-  line-height: 80px;
-  font-size: 15px;
-  overflow: hidden;
-}
-.user-link{
-  margin-top: 25px;
-  height: 30px;
-  width: 50px;
-  background-color: darkorange;
-  border: none;
-  border-radius: 5px;
-  text-align: center;
-  border-bottom: solid 1px peru;
-  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
-}
-.user-link:hover{
-  background-color: chocolate;
-}
-.user-link i{
-  font-size: 15px;
-  color: white;
-  line-height: 30px;
-}
 .post-title{
   padding: 0 15px;
   line-height: 50px;
@@ -133,11 +136,12 @@
   overflow: hidden;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   font-weight: bold;
+  color: forestgreen;
 }
 .post-content{
   padding: 15px;
   width: 20vw;
-  height: calc(30vw - 200px);
+  height: calc(30vw - 160px);
   font-size: 12px;
   overflow-y: scroll;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -145,7 +149,7 @@
 .post-tags{
   padding: 0 15px;
   line-height: 40px;
-  height: 40px;
+  height: 80px;
   font-size: 12px;
   overflow-y: scroll;
 }

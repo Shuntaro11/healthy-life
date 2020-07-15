@@ -7,30 +7,32 @@
         <div class="main-container">
             @foreach($posts as $post)
                 <div class="each-post">
-                    <a href="{{ route('posts.show', $post->id) }}">
-                        <div class="image-wrapper post-image-wrapper">
-                            <img class="inside-image" src="{{ asset('/storage/img/'.$post->image) }}">
-                        </div>
-                    </a>
-                    <div class="right-box">
-                        <div class="top-bar">
-                            <div class="user-info">
-                                <div class="image-wrapper user-image-wrapper">
-                                    <img class="inside-image" src="{{ asset('/storage/img/'.$post->user->user_image) }}" onerror="this.src='/noicon.png'">
-                                </div>
-                            <div class="user-name">{{ $post->user->name }}</div>
+                    <div class="top-bar">
+                        <div class="user-info">
+                            <div class="image-wrapper user-image-wrapper">
+                                <img class="inside-image" src="{{ asset('/storage/img/'.$post->user->user_image) }}" onerror="this.src='/noicon.png'">
                             </div>
-                            <a href="/users/{{$post->user->id}}" class="user-link"><i class="fas fa-user"></i></a>
+                        <div class="user-name">{{ $post->user->name }}</div>
                         </div>
-                        <div class="post-title">{{ $post->title }}</div>
-                        <div class="post-content">{!! nl2br(e($post->content)) !!}</div>
-                        <div class="post-tags">タグ：
-                            @foreach($post->tags as $tag)
-                                <a href="{{ route('top', ['name' => $tag->name]) }}">#{{ $tag->name }}</a>
-                            @endforeach
-                        </div>
-                        <div class="under-bar">
-                            <p class="post-date">{{ $post->created_at->format('Y/m/d H:i:s') }}</p>
+                        <a href="/users/{{$post->user->id}}" class="user-link"><i class="fas fa-user"></i></a>
+                    </div>
+                    <div class="post-main-container">
+                        <a href="{{ route('posts.show', $post->id) }}">
+                            <div class="image-wrapper post-image-wrapper">
+                                <img class="inside-image" src="{{ asset('/storage/img/'.$post->image) }}">
+                            </div>
+                        </a>
+                        <div class="right-box">
+                            <div class="post-title">{{ $post->title }}</div>
+                            <div class="post-content">{!! nl2br(e($post->content)) !!}</div>
+                            <div class="post-tags">タグ：
+                                @foreach($post->tags as $tag)
+                                    <a href="{{ route('top', ['name' => $tag->name]) }}">#{{ $tag->name }}</a>
+                                @endforeach
+                            </div>
+                            <div class="under-bar">
+                                <p class="post-date">{{ $post->created_at->format('Y/m/d H:i:s') }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>

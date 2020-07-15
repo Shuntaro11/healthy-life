@@ -46,7 +46,7 @@
         <div class="comment-container">
             @auth
                 <form class="comment-form" action="">
-                    <div><textarea class="comment-input" placeholder="コメントを追加"></textarea></div>
+                    <div><textarea class="comment-input" rows="2" placeholder="コメントを追加"></textarea></div>
                     <button class="comment-btn">投稿する</button>
                 </form>
             @else
