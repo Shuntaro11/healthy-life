@@ -3,6 +3,15 @@
         @include("header")
         <div class="page-title">食事管理</div>
         <div class="post-form-container">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <form action="/meals" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
                 <div>
@@ -17,7 +26,7 @@
                 </div>
             </form>
         </div>
-        <p class="container-title">栄養素の摂取量</p>
+        <p class="container-title">栄養素の摂取量(直近１週間)</p>
         <div class="ate-table">
             <div class="ate-table-row first-row">
                 <div class="ate-table-cell left-cell"></div>
