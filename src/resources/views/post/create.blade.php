@@ -10,25 +10,30 @@
                         <p class="post-form-notice">料理名を30文字以内で入力してください</p>
                         <div class="post-title-wrapper"><input type="text" name="title" placeholder="料理名" class="post-input" size="30"></div>
                         <p class="form-label">料理の写真</p>
-                        <div><input type="file" name="image"></div>
+                        <div><input type="file" name="image" id="recipeImage" accept="image/*"></div>
+                        <div class="preview-wrapper">
+                            イメージを選択してください
+                            <br>
+                            正方形にリサイズされます
+                        <img class="inside-image" id="recipeImagePreview"></div>
                         <p class="form-label">作り方</p>
                         <p class="post-form-notice">料理概要を2000文字以内で自由に入力してください</p>
                         <div class="post-info-wrapper">
 <textarea class="post-info-input" name="content" rows="20" placeholder="300字以内で入力">
-[説明]
+【説明】
 
-[材料]
+【材料】
 ・
 ・
 ・
 ・
-[作り方]
-１ 
-２ 
-３ 
-４ 
-５ 
-[タグ]
+【作り方】
+①
+②
+③
+④
+⑤
+【タグ】
 
 </textarea></div>
                         @foreach ($errors->all() as $error)
@@ -45,5 +50,7 @@
         @include("nav-bar")
         @include("footer")
         </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="{{ asset('/js/image.js') }}"></script>
     </body>
 </html>
