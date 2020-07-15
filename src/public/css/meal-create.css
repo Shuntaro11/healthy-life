@@ -83,14 +83,15 @@
   max-height: 300px;
   overflow-y: scroll;
   border: 1px solid dimgray;
-  background-color: white;
+  background: whitesmoke;
   border-top: none;
 }
 .ate-index-row{
-  width: 950px;
+  width: 900px;
   display: flex;
   border-top: 1px solid dimgray;
   border-bottom: 1px solid dimgray;
+  background: white;
 }
 .ate-index-row-first{
   margin: 20px auto 0;
@@ -109,4 +110,5 @@
 }
 .delete-link{
   color: maroon;
+  width: 60px;
 }
