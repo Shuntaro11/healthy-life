@@ -1,32 +1,62 @@
 @extends('template')
     <body>
         @include("header")
-        @auth
-            <like
-                :post-id="{{ json_encode($post->id) }}"
-                :user-id="{{ json_encode(Auth::user()->id) }}"
-                :default-Liked="{{ json_encode($defaultLiked) }}"
-                :default-Count="{{ json_encode($defaultCount) }}"
-            ></like>
-        @endauth
-        <div class="each-post">
-            <div class="image-wrapper post-image-wrapper">
+        <div class="page-title">レシピ</div>
+        
+        <div class="post-form-container post-show-container">
+            <div class="recipe-top-bar">
+
+                <div class="user-info">
+                    <a href="/users/{{$post->user->id}}"><div class="image-wrapper user-image-wrapper">
+                        <img class="inside-image" src="{{ asset('/storage/img/'.$post->user->user_image) }}" onerror="this.src='/noicon.png'">
+                    </div></a>
+                    <a href="/users/{{$post->user->id}}"><div class="user-name">{{ $post->user->name }}</div></a>
+                </div>
+
+                @auth
+                    <div class="like-box">
+                        <like
+                            :post-id="{{ json_encode($post->id) }}"
+                            :user-id="{{ json_encode(Auth::user()->id) }}"
+                            :default-Liked="{{ json_encode($defaultLiked) }}"
+                            :default-Count="{{ json_encode($defaultCount) }}"
+                        ></like>
+                    </div>
+                @endauth
+            </div>
+            
+            <div class="recipe-show-title">{{ $post->title }}</div>
+
+            <div class="image-wrapper post-show-image-wrapper">
                 <img class="inside-image" src="{{ asset('/storage/img/'.$post->image) }}">
             </div>
-            <div class="right-box">
-                <div class="top-bar">
-                    <div class="user-info">
-                        <div class="image-wrapper user-image-wrapper">
-                            <img class="inside-image" src="{{ asset('/storage/img/'.$post->user->user_image) }}" onerror="this.src='/noicon.png'">
-                        </div>
-                    <div class="user-name">{{ $post->user->name }}</div>
-                    </div>
-                    <a href="/users/{{$post->user->id}}" class="user-link"><i class="fas fa-user"></i></a>
-                </div>
-                <div class="post-content">{!! $post->content !!}</div>
-                
+
+            <div class="recipe-show-content">{!! nl2br(e($post->content)) !!}</div>
+
+            <div class="post-tags post-tags-show-page">タグ：
+                @foreach($post->tags as $tag)
+                    <a href="{{ route('top', ['name' => $tag->name]) }}">#{{ $tag->name }}</a>
+                @endforeach
             </div>
+
+            <p class="recipe-date">公開日：{{ $post->created_at->format('Y/m/d H:i:s') }}</p>
+
         </div>
+
+        <div class="comment-container">
+            @auth
+                <form class="comment-form" action="">
+                    <div><textarea class="comment-input" placeholder="コメントを追加"></textarea></div>
+                    <button class="comment-btn">投稿する</button>
+                </form>
+            @else
+                <div class="comment-form">
+                    <div><p class="comment-input comment-input-guest">ログイン後コメントができます</p></div>
+                    <button class="comment-btn">・・・</button>
+                </div>
+            @endauth
+        </div>
+        
         @include("nav-bar")
         @include("footer")
         </div>

@@ -30,22 +30,7 @@
                             @endforeach
                         </div>
                         <div class="under-bar">
-                            <div class="like-bar">
-                                <p class="post-date">{{ $post->created_at->format('Y/m/d H:i:s') }}</p>
-                            </div>
-                            <div>
-                                @auth
-                                    <form class="comment-form" action="">
-                                        <input type="text" class="comment-input" placeholder="コメントを追加">
-                                        <button class="comment-btn">投稿する</button>
-                                    </form>
-                                @else
-                                    <div class="comment-form">
-                                        <p class="comment-input comment-input-guest">ログイン後コメントができます</p>
-                                        <button class="comment-btn">・・・</button>
-                                    </div>
-                                @endauth
-                            </div>
+                            <p class="post-date">{{ $post->created_at->format('Y/m/d H:i:s') }}</p>
                         </div>
                     </div>
                 </div>
