@@ -3,6 +3,15 @@
         @include("header")
             <div class="page-title">レシピ投稿</div>
             <div class="post-form-container">
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <form action="/posts" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                     <div>
@@ -36,14 +45,8 @@
 【タグ】
 
 </textarea></div>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
                         <button class="form-button" type="submit">投稿</button>
                     </div>
-                    @if($errors->first('post'))
-                        <p>※{{$errors->first('post')}}</p>
-                    @endif
                 </form>
             </div>
         </div>
