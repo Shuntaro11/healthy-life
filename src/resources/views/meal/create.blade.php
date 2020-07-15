@@ -13,7 +13,7 @@
                     <food-name-search></food-name-search>
                     <p class="form-label">量(g)</p>
                     <div><input type="number" name="quantity" class="post-input input-quantity"></div>
-                    <button type="submit">登録</button>
+                    <button class="form-button" type="submit">登録</button>
                 </div>
             </form>
         </div>
@@ -21,18 +21,18 @@
         <div class="ate-table">
             <div class="ate-table-row first-row">
                 <div class="ate-table-cell left-cell"></div>
-                <div class="ate-table-cell">カロリー</div>
-                <div class="ate-table-cell">タンパク質</div>
-                <div class="ate-table-cell">脂質</div>
-                <div class="ate-table-cell">炭水化物</div>
-                <div class="ate-table-cell">ビタミンB1</div>
-                <div class="ate-table-cell">ビタミンC</div>
-                <div class="ate-table-cell">食塩</div>
-                <div class="ate-table-cell">食物繊維</div>
-                <div class="ate-table-cell">カルシウム</div>
+                <div class="ate-table-cell">カロリー(kcal)</div>
+                <div class="ate-table-cell">タンパク質(g)</div>
+                <div class="ate-table-cell">脂質(g)</div>
+                <div class="ate-table-cell">炭水化物(g)</div>
+                <div class="ate-table-cell">ビタミンB1(mg)</div>
+                <div class="ate-table-cell">ビタミンC(mg)</div>
+                <div class="ate-table-cell">食塩(g)</div>
+                <div class="ate-table-cell">食物繊維(g)</div>
+                <div class="ate-table-cell">カルシウム(mg)</div>
             </div>
             <div class="ate-table-row">
-                <div class="ate-table-cell left-cell">今日 ({{ $today }})</div>
+                <div class="ate-table-cell left-cell">今日</div>
                 <div class="ate-table-cell">{{ $todaysEnergy }}</div>
                 <div class="ate-table-cell">{{ $todaysProtein }}</div>
                 <div class="ate-table-cell">{{ $todaysFat }}</div>
@@ -44,7 +44,7 @@
                 <div class="ate-table-cell">{{ $todaysCalcium }}</div>
             </div>
             <div class="ate-table-row">
-                <div class="ate-table-cell left-cell">昨日 ({{ $yesterday }})</div>
+                <div class="ate-table-cell left-cell">昨日</div>
                 <div class="ate-table-cell">{{ $yesterdaysEnergy }}</div>
                 <div class="ate-table-cell">{{ $yesterdaysProtein }}</div>
                 <div class="ate-table-cell">{{ $yesterdaysFat }}</div>
@@ -54,6 +54,66 @@
                 <div class="ate-table-cell">{{ $yesterdaysSalt }}</div>
                 <div class="ate-table-cell">{{ $yesterdaysDietaryFiber }}</div>
                 <div class="ate-table-cell">{{ $yesterdaysCalcium }}</div>
+            </div>
+            <div class="ate-table-row">
+                <div class="ate-table-cell left-cell">２日前</div>
+                <div class="ate-table-cell">{{ $twoDaysAgoEnergy }}</div>
+                <div class="ate-table-cell">{{ $twoDaysAgoProtein }}</div>
+                <div class="ate-table-cell">{{ $twoDaysAgoFat }}</div>
+                <div class="ate-table-cell">{{ $twoDaysAgoCarbon }}</div>
+                <div class="ate-table-cell">{{ $twoDaysAgoVitaminb1 }}</div>
+                <div class="ate-table-cell">{{ $twoDaysAgoVitaminc }}</div>
+                <div class="ate-table-cell">{{ $twoDaysAgoSalt }}</div>
+                <div class="ate-table-cell">{{ $twoDaysAgoDietaryFiber }}</div>
+                <div class="ate-table-cell">{{ $twoDaysAgoCalcium }}</div>
+            </div>
+            <div class="ate-table-row">
+                <div class="ate-table-cell left-cell">３日前</div>
+                <div class="ate-table-cell">{{ $threeDaysAgoEnergy }}</div>
+                <div class="ate-table-cell">{{ $threeDaysAgoProtein }}</div>
+                <div class="ate-table-cell">{{ $threeDaysAgoFat }}</div>
+                <div class="ate-table-cell">{{ $threeDaysAgoCarbon }}</div>
+                <div class="ate-table-cell">{{ $threeDaysAgoVitaminb1 }}</div>
+                <div class="ate-table-cell">{{ $threeDaysAgoVitaminc }}</div>
+                <div class="ate-table-cell">{{ $threeDaysAgoSalt }}</div>
+                <div class="ate-table-cell">{{ $threeDaysAgoDietaryFiber }}</div>
+                <div class="ate-table-cell">{{ $threeDaysAgoCalcium }}</div>
+            </div>
+            <div class="ate-table-row">
+                <div class="ate-table-cell left-cell">４日前</div>
+                <div class="ate-table-cell">{{ $fourDaysAgoEnergy }}</div>
+                <div class="ate-table-cell">{{ $fourDaysAgoProtein }}</div>
+                <div class="ate-table-cell">{{ $fourDaysAgoFat }}</div>
+                <div class="ate-table-cell">{{ $fourDaysAgoCarbon }}</div>
+                <div class="ate-table-cell">{{ $fourDaysAgoVitaminb1 }}</div>
+                <div class="ate-table-cell">{{ $fourDaysAgoVitaminc }}</div>
+                <div class="ate-table-cell">{{ $fourDaysAgoSalt }}</div>
+                <div class="ate-table-cell">{{ $fourDaysAgoDietaryFiber }}</div>
+                <div class="ate-table-cell">{{ $fourDaysAgoCalcium }}</div>
+            </div>
+            <div class="ate-table-row">
+                <div class="ate-table-cell left-cell">５日前</div>
+                <div class="ate-table-cell">{{ $fiveDaysAgoEnergy }}</div>
+                <div class="ate-table-cell">{{ $fiveDaysAgoProtein }}</div>
+                <div class="ate-table-cell">{{ $fiveDaysAgoFat }}</div>
+                <div class="ate-table-cell">{{ $fiveDaysAgoCarbon }}</div>
+                <div class="ate-table-cell">{{ $fiveDaysAgoVitaminb1 }}</div>
+                <div class="ate-table-cell">{{ $fiveDaysAgoVitaminc }}</div>
+                <div class="ate-table-cell">{{ $fiveDaysAgoSalt }}</div>
+                <div class="ate-table-cell">{{ $fiveDaysAgoDietaryFiber }}</div>
+                <div class="ate-table-cell">{{ $fiveDaysAgoCalcium }}</div>
+            </div>
+            <div class="ate-table-row">
+                <div class="ate-table-cell left-cell">６日前</div>
+                <div class="ate-table-cell">{{ $sixDaysAgoEnergy }}</div>
+                <div class="ate-table-cell">{{ $sixDaysAgoProtein }}</div>
+                <div class="ate-table-cell">{{ $sixDaysAgoFat }}</div>
+                <div class="ate-table-cell">{{ $sixDaysAgoCarbon }}</div>
+                <div class="ate-table-cell">{{ $sixDaysAgoVitaminb1 }}</div>
+                <div class="ate-table-cell">{{ $sixDaysAgoVitaminc }}</div>
+                <div class="ate-table-cell">{{ $sixDaysAgoSalt }}</div>
+                <div class="ate-table-cell">{{ $sixDaysAgoDietaryFiber }}</div>
+                <div class="ate-table-cell">{{ $sixDaysAgoCalcium }}</div>
             </div>
         </div>
         @include("nav-bar")
