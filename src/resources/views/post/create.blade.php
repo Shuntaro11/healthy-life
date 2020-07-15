@@ -5,7 +5,7 @@
                 <form action="/posts" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                     <div>
-                        <p class="form-title">レシピ投稿</p>
+                        <p class="container-title">レシピ投稿</p>
                         <p class="form-label">レシピタイトル</p>
                         <p class="post-form-notice">料理名を30文字以内で入力してください</p>
                         <div class="post-title-wrapper"><input type="text" name="title" placeholder="料理名" class="post-input" size="30"></div>

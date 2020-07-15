@@ -66,9 +66,9 @@
   text-align: center;
   background-color: white;
   border-left: 1px solid dimgray;
+  font-size: 13px;
 }
 .left-cell{
   width: 200px;
   border: none;
-  font-size: 12px;
 }

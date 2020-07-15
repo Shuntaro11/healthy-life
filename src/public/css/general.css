@@ -62,7 +62,8 @@ textarea{
   margin-top: 50px;
 }
 
-.form-title{
+.container-title{
   font-size: 25px;
-  margin-top: 20px;
+  margin: 20px;
+  text-align: center;
 }
