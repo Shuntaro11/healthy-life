@@ -48,7 +48,7 @@
 }
 
 .ate-table{
-  margin: 20px auto;
+  margin: 20px auto 50px;
   width: 950px;
   border: 1px solid dimgray;
   overflow: hidden;
@@ -69,7 +69,44 @@
   font-size: 13px;
   line-height: 30px;
 }
+.ate-table-cell-left{
+  border: none;
+}
 .left-cell{
   width: 50px;
   border: none;
+}
+
+.ate-index{
+  margin: 0 auto 50px;
+  width: 900px;
+  max-height: 300px;
+  overflow-y: scroll;
+  border: 1px solid dimgray;
+  background-color: white;
+  border-top: none;
+}
+.ate-index-row{
+  width: 950px;
+  display: flex;
+  border-top: 1px solid dimgray;
+  border-bottom: 1px solid dimgray;
+}
+.ate-index-row-first{
+  margin: 20px auto 0;
+  width: 900px;
+  border: 1px solid dimgray;
+}
+.ate-food-name{
+  font-size: 15px;
+  color: forestgreen;
+}
+.ate-food-name-container{
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  margin-top: 15px;
+}
+.delete-link{
+  color: maroon;
 }
