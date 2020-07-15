@@ -96,4 +96,12 @@ textarea{
   text-align: center;
   padding-top: 12vw;
   color: darkgray;
+  margin-top: 5px;
+}
+.user-image-preview{
+  border-radius: 100%;
+  width: 20vw;
+  height: 20vw;
+  padding-top: 8vw;
+  font-size: 13px;
 }

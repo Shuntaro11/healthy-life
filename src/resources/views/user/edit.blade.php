@@ -1,18 +1,29 @@
 @extends('template')
     <body>
         @include("header")
-        <div>プロフィール編集</div>
-        <form action="/users" method="post" enctype="multipart/form-data">
-            @method('PUT')
-            {{ csrf_field() }}
-            <div>
-                <label>ユーザーネーム</label>
-                <div><input type="text" name="name" value="{{ $auth->name }}"></div>
-                <label>アイコン画像</label>
-                <div><input type="file" name="user_image"></div>
-                <button type="submit">更新</button>
+            <div class="page-title">プロフィール編集</div>
+            <div class="post-form-container">
+                <form action="/users" method="post" enctype="multipart/form-data">
+                    @method('PUT')
+                    {{ csrf_field() }}
+                    <div>
+                        <p class="form-label">ユーザーネーム</p>
+                        <div><input type="text" name="name" value="{{ $auth->name }}" class="post-input"></div>
+                        <p class="form-label">アイコン画像</p>
+                        <div><input type="file" name="user_image" id="userImage" accept="image/*"></div>
+                                <div class="preview-wrapper user-image-preview">
+                                    変更後のイメージを選択してください
+                                    <br>
+                                    円形にリサイズされます
+                                <img class="inside-image" id="userImagePreview"></div>
+                        <button type="submit" class="form-button">更新</button>
+                    </div>
+                </form>
             </div>
-        </form>
+        @include("nav-bar")
+        @include("footer")
         </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="{{ asset('/js/image.js') }}"></script>
     </body>
 </html>
