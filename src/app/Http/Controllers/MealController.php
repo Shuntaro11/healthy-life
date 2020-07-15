@@ -13,6 +13,9 @@ class MealController extends Controller
 {
     public function create()
     {
+        $auth = Auth::user();
+        $meals = $auth->meals()->latest()->take(10)->get();
+
         $todaysEnergy = 0;
         $todaysProtein = 0;
         $todaysFat = 0;
@@ -196,6 +199,7 @@ class MealController extends Controller
         }
         
         return view('meal.create', compact(
+            'meals',
             'today',
             'todaysEnergy',
             'todaysProtein',

@@ -125,6 +125,41 @@
                 <div class="ate-table-cell">{{ $sixDaysAgoCalcium }}</div>
             </div>
         </div>
+        <p class="container-title">最近食べたもの</p>
+        <div class="ate-index-row ate-index-row-first">
+            <div class="ate-table-cell ate-table-cell-left">カロリー(kcal)</div>
+            <div class="ate-table-cell">タンパク質(g)</div>
+            <div class="ate-table-cell">脂質(g)</div>
+            <div class="ate-table-cell">炭水化物(g)</div>
+            <div class="ate-table-cell">ビタミンB1(mg)</div>
+            <div class="ate-table-cell">ビタミンC(mg)</div>
+            <div class="ate-table-cell">食塩(g)</div>
+            <div class="ate-table-cell">食物繊維(g)</div>
+            <div class="ate-table-cell">カルシウム(mg)</div>
+        </div>
+        <div class="ate-index">
+            @foreach($meals as $meal)
+                <div class="ate-food-name-container">
+                    <div class="ate-food-name">
+                        ［{{ $meal->ate_at }}］
+                        {{ $meal->food_ingredient->food_name }}
+                        ［{{ $meal->quantity }}g］
+                    </div>
+                    <a class="delete-link" href="/">〈削除〉</a>
+                </div>
+                <div class="ate-index-row">
+                    <div class="ate-table-cell ate-table-cell-left">{{ ($meal->food_ingredient->energy_kcal) * ($meal->quantity / 100) }}</div>
+                    <div class="ate-table-cell">{{ ($meal->food_ingredient->protein) * ($meal->quantity / 100) }}</div>
+                    <div class="ate-table-cell">{{ ($meal->food_ingredient->fat) * ($meal->quantity / 100) }}</div>
+                    <div class="ate-table-cell">{{ ($meal->food_ingredient->carbon) * ($meal->quantity / 100) }}</div>
+                    <div class="ate-table-cell">{{ ($meal->food_ingredient->vitamin_b1) * ($meal->quantity / 100) }}</div>
+                    <div class="ate-table-cell">{{ ($meal->food_ingredient->vitamin_c) * ($meal->quantity / 100)}}</div>
+                    <div class="ate-table-cell">{{ ($meal->food_ingredient->salt) * ($meal->quantity / 100) }}</div>
+                    <div class="ate-table-cell">{{ ($meal->food_ingredient->dietary_fiber) * ($meal->quantity / 100) }}</div>
+                    <div class="ate-table-cell">{{ ($meal->food_ingredient->calcium) * ($meal->quantity / 100) }}</div>
+                </div>
+            @endforeach
+        </div>
         @include("nav-bar")
         @include("footer")
         </div>
