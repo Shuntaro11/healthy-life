@@ -1,11 +1,11 @@
 @extends('template')
     <body>
         @include("header")
+            <div class="page-title">レシピ投稿</div>
             <div class="post-form-container">
                 <form action="/posts" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                     <div>
-                        <p class="form-title">レシピ投稿</p>
                         <p class="form-label">レシピタイトル</p>
                         <p class="post-form-notice">料理名を30文字以内で入力してください</p>
                         <div class="post-title-wrapper"><input type="text" name="title" placeholder="料理名" class="post-input" size="30"></div>
@@ -14,7 +14,7 @@
                         <p class="form-label">作り方</p>
                         <p class="post-form-notice">料理概要を2000文字以内で自由に入力してください</p>
                         <div class="post-info-wrapper">
-<textarea class="post-info-input" name="content" cols="100" rows="20" placeholder="300字以内で入力">
+<textarea class="post-info-input" name="content" rows="20" placeholder="300字以内で入力">
 [説明]
 
 [材料]
@@ -34,7 +34,7 @@
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
                         @endforeach
-                        <button type="submit">投稿</button>
+                        <button class="form-button" type="submit">投稿</button>
                     </div>
                     @if($errors->first('post'))
                         <p>※{{$errors->first('post')}}</p>

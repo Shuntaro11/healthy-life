@@ -62,57 +62,25 @@ textarea{
   margin-top: 50px;
 }
 
-.form-title{
+.container-title{
   font-size: 25px;
-  margin-top: 20px;
+  text-align: center;
 }
-
-
-.selected-food-display{
-  width: 400px;
-  height: 40px;
-  background-color: white;
-  border: 1px solid dimgray;
-  border-radius: 3px;
-  margin: 0 auto;
-  line-height: 40px;
+.form-button{
   position: relative;
-  margin-bottom: 50px;
+  display: inline-block;
+  padding: 5px 10px;
+  margin-top: 20px;
+  font-size: 15px;
+  border: none;
+  color: #FFF;
+  background: #fd9535;
+  border-bottom: solid 2px #d27d00;
+  border-radius: 4px;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  font-weight: bold;
 }
-.search-food-result{
-  position: absolute;
-  top: 39px;
-  left: -1px;
-  width: 400px;
-  background-color: white;
-  border: 1px solid dimgray;
-  border-top: 0;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-  margin: 0 auto;
-}
-.selected-food-name{
-  overflow-x: hidden;
-}
-.search-food-input{
-  margin-top: 5px;
-  width: 380px;
-  height: 30px;
-  line-height: 30px;
-}
-.food-name-list{
-  width: 380px;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  max-height: 200px;
-  text-align: left;
-  margin: 0 auto;
-  margin-bottom: 5px;
-}
-.each-food-name{
-  cursor: pointer;
-  font-size: 12px;
-}
-.each-food-name:hover{
-  background-color: rgb(200, 200, 200);
+.form-button:active {
+  border-bottom: solid 2px #fd9535;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
 }

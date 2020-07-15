@@ -18,6 +18,9 @@
 /* 投稿詳細画面 */
 @import 'post-show.css';
 
+/* 食事管理画面 */
+@import 'meal-create.css';
+
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
