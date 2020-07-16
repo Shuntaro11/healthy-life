@@ -87,13 +87,15 @@
                 @foreach($post->comments as $comment)
                     <p class="comment-user-name">{{ $comment->user->name }}</p>
                     <div class="comment-content">{{ $comment->comment }}</div>
-                    @if($comment->user_id === Auth::user()->id)
-                        <form method="post" action="/comments/{{$comment->id}}">
-                        <input name="_method" type="hidden" value="DELETE">
-                        {{ csrf_field()}}
-                            <button type="submit" class="delete-link">コメントを削除する</button>
-                        </form>
-                    @endif
+                    @auth
+                        @if($comment->user_id === Auth::user()->id)
+                            <form method="post" action="/comments/{{$comment->id}}">
+                            <input name="_method" type="hidden" value="DELETE">
+                            {{ csrf_field()}}
+                                <button type="submit" class="delete-link">コメントを削除する</button>
+                            </form>
+                        @endif
+                    @endauth
                 @endforeach
             </div>
         </div>

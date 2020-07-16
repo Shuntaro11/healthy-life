@@ -13,5 +13,11 @@
 /* フッター */
 @import 'footer.css';
 
-/* post詳細画面 */
+/* レシピ詳細画面 */
 @import 'post-show.css';
+
+/* 食事管理画面 */
+@import 'meal-create.css';
+
+/* レシピ投稿画面 */
+@import 'post-create.css';
