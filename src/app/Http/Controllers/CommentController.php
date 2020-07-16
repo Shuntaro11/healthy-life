@@ -27,4 +27,11 @@ class CommentController extends Controller
         return back();
     }
 
+    public function destroy ($id)
+    {
+        Comment::destroy($id);
+
+        return back();
+    }
+
 }

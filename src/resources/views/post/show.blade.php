@@ -60,8 +60,15 @@
             <div class="comment-index">
                 <div class="comment-index-title">コメント一覧</div>
                 @foreach($post->comments as $comment)
-                    <div class="comment-user-name">{{ $comment->user->name }}</div>
+                    <p class="comment-user-name">{{ $comment->user->name }}</p>
                     <div class="comment-content">{{ $comment->comment }}</div>
+                    @if($comment->user_id === Auth::user()->id)
+                        <form method="post" action="/comments/{{$comment->id}}">
+                        <input name="_method" type="hidden" value="DELETE">
+                        {{ csrf_field()}}
+                            <button type="submit" class="delete-link">コメントを削除する</button>
+                        </form>
+                    @endif
                 @endforeach
             </div>
         </div>

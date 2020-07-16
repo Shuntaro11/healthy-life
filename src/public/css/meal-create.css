@@ -110,5 +110,8 @@
 }
 .delete-link{
   color: maroon;
-  width: 60px;
+  border: none;
+  background: none;
+  padding-right: 30px;
+  font-size: 12px;
 }

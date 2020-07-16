@@ -148,7 +148,7 @@
                     <form method="post" action="/meals/{{$meal->id}}">
                     <input name="_method" type="hidden" value="DELETE">
                     {{ csrf_field()}}
-                        <button type="submit" class="delete-link">削除</button>
+                        <button type="submit" class="delete-link">このデータを削除</button>
                     </form>
 
                 </div>
