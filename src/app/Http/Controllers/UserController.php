@@ -9,11 +9,7 @@ use \App\User;
 
 class UserController extends Controller
 {
-    public function index()
-    {
-        return view('user.index');
 
-    }
     public function show($id)
     {
         $user = User::find($id);
@@ -22,8 +18,16 @@ class UserController extends Controller
     }
 
     public function edit(){
-        $auth = Auth::user();
-        return view('user.edit', compact('auth'));
+
+        if ( Auth::check() ) {
+            
+            $auth = Auth::user();
+            return view('user.edit', compact('auth'));
+
+        } else {
+          
+            return redirect('/');
+        }
     }
 
     public function update(Request $request){
