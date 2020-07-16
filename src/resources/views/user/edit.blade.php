@@ -19,12 +19,12 @@
                         <p class="form-label">ユーザーネーム</p>
                         <div><input type="text" name="name" value="{{ $auth->name }}" class="post-input"></div>
                         <p class="form-label">アイコン画像</p>
-                        <div><input type="file" name="user_image" id="userImage" accept="image/*"></div>
+                        <div><input type="file" name="user_image" id="userEditImage" accept="image/*"></div>
                                 <div class="preview-wrapper user-image-preview">
                                     変更後のイメージを選択してください
                                     <br>
                                     円形にリサイズされます
-                                <img class="inside-image" id="userImagePreview"></div>
+                                <img class="inside-image" id="userEditImagePreview"></div>
                         <button type="submit" class="form-button">更新</button>
                     </div>
                 </form>
