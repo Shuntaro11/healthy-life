@@ -19,7 +19,8 @@ Route::get('/posts/search', 'PostController@search')->name('posts.search');
 
 Auth::routes();
 
-Route::resource('posts', 'PostController')->only(['create', 'store', 'show']);
+Route::resource('posts', 'PostController')->only(['create', 'store', 'show', 'edit', 'destroy']);
 Route::resource('users', 'UserController')->only(['show', 'edit']);
 Route::resource('likes', 'LikeController')->only(['index']);
 Route::resource('meals', 'MealController')->only(['create', 'store', 'destroy']);
+Route::resource('comments', 'CommentController')->only(['store', 'destroy']);

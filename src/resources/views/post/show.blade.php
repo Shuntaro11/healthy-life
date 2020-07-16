@@ -45,9 +45,11 @@
 
         <div class="comment-container">
             @auth
-                <form class="comment-form" action="">
-                    <div><textarea class="comment-input" rows="2" placeholder="コメントを追加"></textarea></div>
-                    <button class="comment-btn">投稿する</button>
+                <form action="/comments" method="post" enctype="multipart/form-data" class="comment-form">
+                {{ csrf_field() }}
+                    <div><textarea name="comment" class="comment-input" rows="2" placeholder="コメントを追加"></textarea></div>
+                    <input name="post_id" type="hidden" value="{{$post->id}}">
+                    <button type="submit" class="comment-btn">投稿する</button>
                 </form>
             @else
                 <div class="comment-form">
@@ -55,6 +57,20 @@
                     <button class="comment-btn">・・・</button>
                 </div>
             @endauth
+            <div class="comment-index">
+                <div class="comment-index-title">コメント一覧</div>
+                @foreach($post->comments as $comment)
+                    <p class="comment-user-name">{{ $comment->user->name }}</p>
+                    <div class="comment-content">{{ $comment->comment }}</div>
+                    @if($comment->user_id === Auth::user()->id)
+                        <form method="post" action="/comments/{{$comment->id}}">
+                        <input name="_method" type="hidden" value="DELETE">
+                        {{ csrf_field()}}
+                            <button type="submit" class="delete-link">コメントを削除する</button>
+                        </form>
+                    @endif
+                @endforeach
+            </div>
         </div>
         
         @include("nav-bar")
