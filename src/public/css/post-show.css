@@ -85,3 +85,19 @@
   height: 30px;
   line-height: 30px;
 }
+
+.comment-index{
+  color: dimgray;
+}
+.comment-index-title{
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+.comment-user-name{
+  margin-top: 10px;
+  font-weight: bold;
+  color: #212529;
+}
+.comment-content{
+  font-family: 'YuGothic';
+}

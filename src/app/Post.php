@@ -46,4 +46,9 @@ class Post extends Model
     {
         return $this->hasMany('App\Meal', 'post_id', 'id');
     }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
 }

@@ -45,9 +45,11 @@
 
         <div class="comment-container">
             @auth
-                <form class="comment-form" action="">
-                    <div><textarea class="comment-input" rows="2" placeholder="コメントを追加"></textarea></div>
-                    <button class="comment-btn">投稿する</button>
+                <form action="/comments" method="post" enctype="multipart/form-data" class="comment-form">
+                {{ csrf_field() }}
+                    <div><textarea name="comment" class="comment-input" rows="2" placeholder="コメントを追加"></textarea></div>
+                    <input name="post_id" type="hidden" value="{{$post->id}}">
+                    <button type="submit" class="comment-btn">投稿する</button>
                 </form>
             @else
                 <div class="comment-form">
@@ -55,6 +57,13 @@
                     <button class="comment-btn">・・・</button>
                 </div>
             @endauth
+            <div class="comment-index">
+                <div class="comment-index-title">コメント一覧</div>
+                @foreach($post->comments as $comment)
+                    <div class="comment-user-name">{{ $comment->user->name }}</div>
+                    <div class="comment-content">{{ $comment->comment }}</div>
+                @endforeach
+            </div>
         </div>
         
         @include("nav-bar")
