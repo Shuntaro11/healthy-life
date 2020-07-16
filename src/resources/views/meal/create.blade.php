@@ -2,6 +2,13 @@
     <body>
         @include("header")
         <div class="page-title">食事管理</div>
+        <div class="show-user-name">{{ Auth::user()->name }}</div>
+        <div class="image-wrapper show-user-image-wrapper">
+            <img class="inside-image" src="{{ asset('/storage/img/'.Auth::user()->user_image) }}" onerror="this.src='/noicon.png'">
+        </div>
+        <a href="/users/{{Auth::user()->id}}/edit">
+            <div class="user-edit-link">プロフィール編集</div>
+        </a>
         <div class="post-form-container">
             @if ($errors->any())
                 <div class="alert alert-danger">

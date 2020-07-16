@@ -62,6 +62,15 @@
 
         <div class="comment-container">
             @auth
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <form action="/comments" method="post" enctype="multipart/form-data" class="comment-form">
                 {{ csrf_field() }}
                     <div><textarea name="comment" class="comment-input" rows="2" placeholder="コメントを追加"></textarea></div>

@@ -13,6 +13,7 @@
             @endif
         @endauth
 
+        <p class="container-title container-title-margin-top">{{ $user->name }} の投稿一覧</p>
         <div class="user-post-index">
             @foreach($user_posts as $post)
                 <a href="{{ route('posts.show', $post->id) }}">
