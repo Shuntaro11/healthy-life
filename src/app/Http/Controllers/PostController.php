@@ -85,6 +85,13 @@ class PostController extends Controller
         return view('post.show', compact('post', 'defaultCount', 'defaultLiked'));
     }
 
+    public function destroy ($id)
+    {
+        Comment::destroy($id);
+
+        return back();
+    }
+
     public function search(Request $request)
     {
 
