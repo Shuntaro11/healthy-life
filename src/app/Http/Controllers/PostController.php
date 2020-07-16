@@ -73,6 +73,65 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
+        if ( Auth::check() ) {
+            $defaultCount = count($post->likes);
+
+            $defaultLiked = $post->likes->where('user_id', Auth::user()->id)->first();
+            if(isset($defaultLiked)){
+                $defaultLiked == false;
+            } else {
+                $defaultLiked == true;
+            }
+
+            return view('post.show', compact('post', 'defaultCount', 'defaultLiked'));
+
+          } else {
+          
+            return view('post.show', compact('post'));
+          }
+    }
+
+    public function edit(Post $post){
+        
+        return view('post.edit', compact('post'));
+    }
+
+    public function update(Request $request, Post $post){
+
+        $validator = $request->validate([
+            'title' => ['required', 'string', 'max:30'],
+            'image' => ['file', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
+            'content' => ['required', 'string', 'max:2000'],
+        ]);
+
+        if(!empty($request['image'])){
+            $path = $request['image']->store('public/img');
+            $post->title = $request->title;
+            $post->image = basename($path);
+            $post->content = $request->content;
+        }else{
+            $post->title = $request->title;
+            $post->content = $request->content;
+        }
+
+        $post->tags()->delete();
+
+        preg_match_all('/#([a-zA-Z0-9０-９ぁ-んァ-ヶー一-龠]+)/u', $request->content, $match);
+        
+        $tags = [];
+        foreach ($match[1] as $tag) {
+            $found = Tag::firstOrCreate(['name' => $tag]);
+            array_push($tags, $found);
+        }
+
+        $tag_ids = [];
+        foreach ($tags as $tag){
+            array_push($tag_ids, $tag['id']);
+        }
+
+        $post->save();
+        $post->tags()->attach($tag_ids);
+
         $defaultCount = count($post->likes);
 
         $defaultLiked = $post->likes->where('user_id', Auth::user()->id)->first();
