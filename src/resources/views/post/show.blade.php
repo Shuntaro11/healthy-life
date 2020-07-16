@@ -2,17 +2,22 @@
     <body>
         @include("header")
         <div class="page-title">レシピ</div>
-        @if($post->user_id === Auth::user()->id)
-            <a href="/posts/{{$post->id}}/edit">
-                <div class="delete-link">このレシピを編集する</div>
-            </a>
-            <form method="post" action="/posts/{{$post->id}}">
-            <input name="_method" type="hidden" value="DELETE">
-            {{ csrf_field()}}
-                <button type="submit" class="delete-link">このレシピを削除する</button>
-            </form>
-        @endif
+  
         <div class="post-form-container post-show-container">
+            @auth
+                <div class="post-edit-link">
+                    @if($post->user_id === Auth::user()->id)
+                        <a href="/posts/{{$post->id}}/edit">
+                            <div class="delete-link">このレシピを編集する</div>
+                        </a>
+                        <form method="post" action="/posts/{{$post->id}}">
+                        <input name="_method" type="hidden" value="DELETE">
+                        {{ csrf_field()}}
+                            <button type="submit" class="delete-link">このレシピを削除する</button>
+                        </form>
+                    @endif
+                </div>
+            @endauth
             <div class="recipe-top-bar">
 
                 <div class="user-info">
@@ -23,13 +28,16 @@
                 </div>
 
                 @auth
+                    <like
+                        :post-id="{{ json_encode($post->id) }}"
+                        :user-id="{{ json_encode(Auth::user()->id) }}"
+                        :default-Liked="{{ json_encode($defaultLiked) }}"
+                        :default-Count="{{ json_encode($defaultCount) }}"
+                    ></like>
+                @else
                     <div class="like-box">
-                        <like
-                            :post-id="{{ json_encode($post->id) }}"
-                            :user-id="{{ json_encode(Auth::user()->id) }}"
-                            :default-Liked="{{ json_encode($defaultLiked) }}"
-                            :default-Count="{{ json_encode($defaultCount) }}"
-                        ></like>
+                        <p class="like-btn-wrapper"><i class="fas fa-heart like-button un-like-button"></i></p>
+                        <p class="like-count">{{ $post->likes->count() }} 件</p>
                     </div>
                 @endauth
             </div>
@@ -63,7 +71,6 @@
             @else
                 <div class="comment-form">
                     <div><p class="comment-input comment-input-guest">ログイン後コメントができます</p></div>
-                    <button class="comment-btn">・・・</button>
                 </div>
             @endauth
             <div class="comment-index">
