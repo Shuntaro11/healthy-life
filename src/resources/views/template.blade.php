@@ -5,5 +5,4 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Healthy Life</title>
     <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     </head>

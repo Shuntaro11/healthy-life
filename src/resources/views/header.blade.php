@@ -21,7 +21,7 @@
                 @endif
             @endauth
         </div>
-        <div class="top-title">Healthy Life</div>
+        <img class="header-logo" src="/healthylifelogo.png">
         <form action="{{ route('posts.search') }}" method="get" class="search-form">
             <input type="text" class="search-input" placeholder="レシピ検索" name="search">
             <button class="search-btn" type="submit">
