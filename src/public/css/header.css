@@ -7,19 +7,27 @@
   padding-bottom: 30px;
   text-align: center;
 }
+.header-container-top-bar{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+}
 .header-logo{
-  width: 500px;
-  height: 100px;
-  margin: 0 auto 30px;
+  width: 250px;
+  height: 50px;
 }
 .auth-nav{
   display: flex;
   justify-content: flex-end;
-  margin-right: 50px;
+  margin-right: 30px;
+}
+.auth-nav a{
+  margin-top: 10px;
+  height: 30px;
 }
 .welcome-message{
   text-align: center;
   font-size: 15px;
-  line-height: 30px;
+  line-height: 50px;
   margin-right: 10px;
 }

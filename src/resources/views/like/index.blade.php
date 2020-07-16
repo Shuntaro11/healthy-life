@@ -4,7 +4,7 @@
         <div class="page-title">お気に入りレシピ一覧</div>
         <div class="user-post-index">
             @foreach($posts as $post)
-                <a href="/">
+                <a href="{{ route('posts.show', $post[0]->id) }}">
                     <div class="image-wrapper user-post-image-wrapper">
                         <img class="inside-image" src="{{ asset('/storage/img/'.$post[0]->image) }}">
                         <div class="hover-wrap">
