@@ -11,6 +11,10 @@ a{
 
 input{
   padding-left: 5px;
+  box-shadow: inset 1px 1px 4px #e6e6e6;
+  border: 1px solid dimgray;
+  border-radius: 3px;
+  background: white;
 }
 
 li{
@@ -19,6 +23,10 @@ li{
 
 textarea{
   padding-left: 5px;
+  box-shadow: inset 1px 1px 4px #e6e6e6;
+  border: 1px solid dimgray;
+  border-radius: 3px;
+  background: white;
 }
 .container{
   text-align: center;
@@ -40,12 +48,13 @@ textarea{
   border: 1px solid #4c65d4;
   color: #212529;
 }
+
 .nav-bar{
   width: 80vw;
   display: flex;
   justify-content: space-between;
   background-color: rgba(255, 255, 255, 0.7);
-  padding: 3vh 50px;
+  padding: 10px 50px;
   border-radius: 10px;
   position: fixed;
   bottom: 20px;
@@ -56,24 +65,27 @@ textarea{
   text-align: center;
 }
 .nav-bar i{
-  font-size: 30px;
+  font-size: 20px;
 }
 .nav-bar p{
   font-size: 12px;
   margin-top: 5px;
 }
+
 .main-container{
   margin-top: 50px;
 }
 
 .container-title{
-  font-size: 25px;
+  font-size: 20px;
+  font-weight: bold;
   text-align: center;
+  color: #2F1C12;
 }
 .form-button{
   position: relative;
   display: inline-block;
-  padding: 5px 10px;
+  padding: 5px 20px;
   margin-top: 20px;
   font-size: 15px;
   border: none;
