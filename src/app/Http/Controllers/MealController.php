@@ -11,6 +11,10 @@ use Carbon\Carbon;
 
 class MealController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     public function create()
     {
         $auth = Auth::user();
@@ -27,7 +31,7 @@ class MealController extends Controller
         $todaysCalcium = 0;
 
         $today = Carbon::now()->format("Y-m-d");
-        $todaysMeal = Meal::where('ate_at', "{$today}")->get();
+        $todaysMeal = Meal::where('ate_at', "{$today}")->where('user_id', "{$auth->id}")->get();
 
         foreach ($todaysMeal as $meal) {
             $calculationQuantity = $meal->quantity/100;
@@ -53,7 +57,7 @@ class MealController extends Controller
         $yesterdaysCalcium = 0;
 
         $yesterday = Carbon::now()->subDay()->format("Y-m-d");
-        $yesterdaysMeal = Meal::where('ate_at', "{$yesterday}")->get();
+        $yesterdaysMeal = Meal::where('ate_at', "{$yesterday}")->where('user_id', "{$auth->id}")->get();
 
         foreach ($yesterdaysMeal as $meal) {
             $calculationQuantity = $meal->quantity/100;
@@ -79,7 +83,7 @@ class MealController extends Controller
         $twoDaysAgoCalcium = 0;
 
         $twoDaysAgo = Carbon::now()->subDay(2)->format("Y-m-d");
-        $twoDaysAgoMeal = Meal::where('ate_at', "{$twoDaysAgo}")->get();
+        $twoDaysAgoMeal = Meal::where('ate_at', "{$twoDaysAgo}")->where('user_id', "{$auth->id}")->get();
 
         foreach ($twoDaysAgoMeal as $meal) {
             $calculationQuantity = $meal->quantity/100;
@@ -105,7 +109,7 @@ class MealController extends Controller
         $threeDaysAgoCalcium = 0;
 
         $threeDaysAgo = Carbon::now()->subDay(3)->format("Y-m-d");
-        $threeDaysAgoMeal = Meal::where('ate_at', "{$threeDaysAgo}")->get();
+        $threeDaysAgoMeal = Meal::where('ate_at', "{$threeDaysAgo}")->where('user_id', "{$auth->id}")->get();
 
         foreach ($threeDaysAgoMeal as $meal) {
             $calculationQuantity = $meal->quantity/100;
@@ -131,7 +135,7 @@ class MealController extends Controller
         $fourDaysAgoCalcium = 0;
 
         $fourDaysAgo = Carbon::now()->subDay(4)->format("Y-m-d");
-        $fourDaysAgoMeal = Meal::where('ate_at', "{$fourDaysAgo}")->get();
+        $fourDaysAgoMeal = Meal::where('ate_at', "{$fourDaysAgo}")->where('user_id', "{$auth->id}")->get();
 
         foreach ($fourDaysAgoMeal as $meal) {
             $calculationQuantity = $meal->quantity/100;
@@ -157,7 +161,7 @@ class MealController extends Controller
         $fiveDaysAgoCalcium = 0;
 
         $fiveDaysAgo = Carbon::now()->subDay(5)->format("Y-m-d");
-        $fiveDaysAgoMeal = Meal::where('ate_at', "{$fiveDaysAgo}")->get();
+        $fiveDaysAgoMeal = Meal::where('ate_at', "{$fiveDaysAgo}")->where('user_id', "{$auth->id}")->get();
 
         foreach ($fiveDaysAgoMeal as $meal) {
             $calculationQuantity = $meal->quantity/100;
@@ -183,7 +187,7 @@ class MealController extends Controller
         $sixDaysAgoCalcium = 0;
 
         $sixDaysAgo = Carbon::now()->subDay(6)->format("Y-m-d");
-        $sixDaysAgoMeal = Meal::where('ate_at', "{$sixDaysAgo}")->get();
+        $sixDaysAgoMeal = Meal::where('ate_at', "{$sixDaysAgo}")->where('user_id', "{$auth->id}")->get();
 
         foreach ($sixDaysAgoMeal as $meal) {
             $calculationQuantity = $meal->quantity/100;
@@ -299,7 +303,7 @@ class MealController extends Controller
         $todaysCalcium = 0;
 
         $today = Carbon::now()->format("Y-m-d");
-        $todaysMeal = Meal::where('ate_at', "{$today}")->get();
+        $todaysMeal = Meal::where('ate_at', "{$today}")->where('user_id', "{$auth->id}")->get();
 
         foreach ($todaysMeal as $meal) {
             $calculationQuantity = $meal->quantity/100;
@@ -325,7 +329,7 @@ class MealController extends Controller
         $yesterdaysCalcium = 0;
 
         $yesterday = Carbon::now()->subDay()->format("Y-m-d");
-        $yesterdaysMeal = Meal::where('ate_at', "{$yesterday}")->get();
+        $yesterdaysMeal = Meal::where('ate_at', "{$yesterday}")->where('user_id', "{$auth->id}")->get();
 
         foreach ($yesterdaysMeal as $meal) {
             $calculationQuantity = $meal->quantity/100;
@@ -351,7 +355,7 @@ class MealController extends Controller
         $twoDaysAgoCalcium = 0;
 
         $twoDaysAgo = Carbon::now()->subDay(2)->format("Y-m-d");
-        $twoDaysAgoMeal = Meal::where('ate_at', "{$twoDaysAgo}")->get();
+        $twoDaysAgoMeal = Meal::where('ate_at', "{$twoDaysAgo}")->where('user_id', "{$auth->id}")->get();
 
         foreach ($twoDaysAgoMeal as $meal) {
             $calculationQuantity = $meal->quantity/100;
@@ -377,7 +381,7 @@ class MealController extends Controller
         $threeDaysAgoCalcium = 0;
 
         $threeDaysAgo = Carbon::now()->subDay(3)->format("Y-m-d");
-        $threeDaysAgoMeal = Meal::where('ate_at', "{$threeDaysAgo}")->get();
+        $threeDaysAgoMeal = Meal::where('ate_at', "{$threeDaysAgo}")->where('user_id', "{$auth->id}")->get();
 
         foreach ($threeDaysAgoMeal as $meal) {
             $calculationQuantity = $meal->quantity/100;
@@ -403,7 +407,7 @@ class MealController extends Controller
         $fourDaysAgoCalcium = 0;
 
         $fourDaysAgo = Carbon::now()->subDay(4)->format("Y-m-d");
-        $fourDaysAgoMeal = Meal::where('ate_at', "{$fourDaysAgo}")->get();
+        $fourDaysAgoMeal = Meal::where('ate_at', "{$fourDaysAgo}")->where('user_id', "{$auth->id}")->get();
 
         foreach ($fourDaysAgoMeal as $meal) {
             $calculationQuantity = $meal->quantity/100;
@@ -429,7 +433,7 @@ class MealController extends Controller
         $fiveDaysAgoCalcium = 0;
 
         $fiveDaysAgo = Carbon::now()->subDay(5)->format("Y-m-d");
-        $fiveDaysAgoMeal = Meal::where('ate_at', "{$fiveDaysAgo}")->get();
+        $fiveDaysAgoMeal = Meal::where('ate_at', "{$fiveDaysAgo}")->where('user_id', "{$auth->id}")->get();
 
         foreach ($fiveDaysAgoMeal as $meal) {
             $calculationQuantity = $meal->quantity/100;
@@ -455,7 +459,7 @@ class MealController extends Controller
         $sixDaysAgoCalcium = 0;
 
         $sixDaysAgo = Carbon::now()->subDay(6)->format("Y-m-d");
-        $sixDaysAgoMeal = Meal::where('ate_at', "{$sixDaysAgo}")->get();
+        $sixDaysAgoMeal = Meal::where('ate_at', "{$sixDaysAgo}")->where('user_id', "{$auth->id}")->get();
 
         foreach ($sixDaysAgoMeal as $meal) {
             $calculationQuantity = $meal->quantity/100;
@@ -557,7 +561,7 @@ class MealController extends Controller
         $todaysCalcium = 0;
 
         $today = Carbon::now()->format("Y-m-d");
-        $todaysMeal = Meal::where('ate_at', "{$today}")->get();
+        $todaysMeal = Meal::where('ate_at', "{$today}")->where('user_id', "{$auth->id}")->get();
 
         foreach ($todaysMeal as $meal) {
             $calculationQuantity = $meal->quantity/100;
@@ -583,7 +587,7 @@ class MealController extends Controller
         $yesterdaysCalcium = 0;
 
         $yesterday = Carbon::now()->subDay()->format("Y-m-d");
-        $yesterdaysMeal = Meal::where('ate_at', "{$yesterday}")->get();
+        $yesterdaysMeal = Meal::where('ate_at', "{$yesterday}")->where('user_id', "{$auth->id}")->get();
 
         foreach ($yesterdaysMeal as $meal) {
             $calculationQuantity = $meal->quantity/100;
@@ -609,7 +613,7 @@ class MealController extends Controller
         $twoDaysAgoCalcium = 0;
 
         $twoDaysAgo = Carbon::now()->subDay(2)->format("Y-m-d");
-        $twoDaysAgoMeal = Meal::where('ate_at', "{$twoDaysAgo}")->get();
+        $twoDaysAgoMeal = Meal::where('ate_at', "{$twoDaysAgo}")->where('user_id', "{$auth->id}")->get();
 
         foreach ($twoDaysAgoMeal as $meal) {
             $calculationQuantity = $meal->quantity/100;
@@ -635,7 +639,7 @@ class MealController extends Controller
         $threeDaysAgoCalcium = 0;
 
         $threeDaysAgo = Carbon::now()->subDay(3)->format("Y-m-d");
-        $threeDaysAgoMeal = Meal::where('ate_at', "{$threeDaysAgo}")->get();
+        $threeDaysAgoMeal = Meal::where('ate_at', "{$threeDaysAgo}")->where('user_id', "{$auth->id}")->get();
 
         foreach ($threeDaysAgoMeal as $meal) {
             $calculationQuantity = $meal->quantity/100;
@@ -661,7 +665,7 @@ class MealController extends Controller
         $fourDaysAgoCalcium = 0;
 
         $fourDaysAgo = Carbon::now()->subDay(4)->format("Y-m-d");
-        $fourDaysAgoMeal = Meal::where('ate_at', "{$fourDaysAgo}")->get();
+        $fourDaysAgoMeal = Meal::where('ate_at', "{$fourDaysAgo}")->where('user_id', "{$auth->id}")->get();
 
         foreach ($fourDaysAgoMeal as $meal) {
             $calculationQuantity = $meal->quantity/100;
@@ -687,7 +691,7 @@ class MealController extends Controller
         $fiveDaysAgoCalcium = 0;
 
         $fiveDaysAgo = Carbon::now()->subDay(5)->format("Y-m-d");
-        $fiveDaysAgoMeal = Meal::where('ate_at', "{$fiveDaysAgo}")->get();
+        $fiveDaysAgoMeal = Meal::where('ate_at', "{$fiveDaysAgo}")->where('user_id', "{$auth->id}")->get();
 
         foreach ($fiveDaysAgoMeal as $meal) {
             $calculationQuantity = $meal->quantity/100;
@@ -713,7 +717,7 @@ class MealController extends Controller
         $sixDaysAgoCalcium = 0;
 
         $sixDaysAgo = Carbon::now()->subDay(6)->format("Y-m-d");
-        $sixDaysAgoMeal = Meal::where('ate_at', "{$sixDaysAgo}")->get();
+        $sixDaysAgoMeal = Meal::where('ate_at', "{$sixDaysAgo}")->where('user_id', "{$auth->id}")->get();
 
         foreach ($sixDaysAgoMeal as $meal) {
             $calculationQuantity = $meal->quantity/100;

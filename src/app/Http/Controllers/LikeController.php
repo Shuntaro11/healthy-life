@@ -9,20 +9,25 @@ use App\Like;
 
 class LikeController extends Controller
 {
-    public function __construct(){
-      $this->middleware('auth');
-    }
-    
     public function index()
     {
-      $user = Auth::user();
-      $likes = Like::where('user_id', $user->id)->get();
-      $posts = array();
-      foreach ($likes as $like) {
-        $post = Post::where('id', $like->post_id)->get();
-        array_unshift($posts, $post);
+      if ( Auth::check() ) {
+            
+        $user = Auth::user();
+        $likes = Like::where('user_id', $user->id)->get();
+        $posts = array();
+        foreach ($likes as $like) {
+          $post = Post::where('id', $like->post_id)->get();
+          array_unshift($posts, $post);
+        }
+        
+        return view('like.index', compact('posts'));
+
+      } else {
+        
+          return redirect('/');
       }
-      return view('like.index', compact('posts'));
+    
     }
 
     public function like(Post $post, Request $request)
