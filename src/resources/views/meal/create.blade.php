@@ -145,7 +145,12 @@
                         {{ $meal->food_ingredient->food_name }}
                         ［{{ $meal->quantity }}g］
                     </div>
-                    <a class="delete-link" href="/">〈削除〉</a>
+                    <form method="post" action="/meals/{{$meal->id}}">
+                    <input name="_method" type="hidden" value="DELETE">
+                    {{ csrf_field()}}
+                        <button type="submit" class="delete-link">削除</button>
+                    </form>
+
                 </div>
                 <div class="ate-index-row">
                     <div class="ate-table-cell ate-table-cell-left">{{ ($meal->food_ingredient->energy_kcal) * ($meal->quantity / 100) }}</div>
