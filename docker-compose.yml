@@ -30,7 +30,7 @@ services:
     environment:
       - TZ=${TZ}
   db:
-    image: mysql:8.0
+    image: mysql:5.7
     volumes:
       - db-store:/var/lib/mysql
       - ./logs:/var/log/mysql
@@ -41,6 +41,8 @@ services:
       - MYSQL_PASSWORD=${DB_PASS}
       - MYSQL_ROOT_PASSWORD=${DB_PASS}
       - TZ=${TZ}
+    ports:
+      - 13306:3306
 
 volumes:
   db-store:
