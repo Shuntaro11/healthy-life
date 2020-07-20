@@ -2,7 +2,8 @@ version: "3"
 services:
   app:
     build:
-      context: ./docker/php
+      context: .
+      dockerfile: ./docker/php/Dockerfile
       args:
         - TZ=${TZ}
     volumes:
@@ -18,7 +19,9 @@ services:
       - DB_PASSWORD=${DB_PASS}
       - TZ=${TZ}
   web:
-    image: nginx:1.17-alpine
+    build:
+      context: .
+      dockerfile: ./docker/nginx/Dockerfile
     depends_on:
       - app
     ports:
