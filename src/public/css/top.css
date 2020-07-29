@@ -219,18 +219,17 @@
     height: 60vw;
   }
   .hover-wrap{
-    padding: 10px 5px;
+    padding: 3px;
   }
   .hover-post-title{
-    font-size: 12px;
-    margin: 2px 0;
+    font-size: 10px;
+    margin-bottom: 2px;
   }
   .hover-tag{
-    padding: 3px;
     border-radius: 2px;
-    margin: 3px 0;
-    margin-right: 3px;
-    font-size: 8px;
+    margin-bottom: 2px;
+    margin-right: 2px;
+    font-size: 10px;
   }
   .right-box{
     width: 30vw;
@@ -254,21 +253,23 @@
     font-size: 8px;
     overflow-y: scroll;
   }
-  /* .post-tags-show-page{
-    font-size: 8px;
+  .post-tags-show-page{
+    font-size: 10px;
+    width: 80vw;
     border: 1px solid silver;
     border-radius: 3px;
     height: 60px;
-    line-height: 60px;
-  } */
+    line-height: 30px;
+    margin: auto;
+  }
   .post-tags a{
     padding: 5px;
     border-radius: 3px;
   }
-  /* .post-tags-show-page a{
+  .post-tags-show-page a{
     padding: 3px;
     margin-right: 3px;
-  } */
+  }
   
   .under-bar{
     height: 20px;
@@ -340,21 +341,15 @@
   .post-tags{
     display: none;
   }
-  /* .post-tags-show-page{
-    font-size: 8px;
-    border: 1px solid silver;
-    border-radius: 3px;
-    height: 60px;
-    line-height: 60px;
-  } */
-
-  /* .post-tags-show-page a{
-    padding: 3px;
-    margin-right: 3px;
-  } */
+  .hover-tag{
+    display: none;
+  }
   
   .under-bar{
     display: none;
+  }
+  .post-tags-show-page{
+    display: block;
   }
   .post-tags-sd{
     display: block;

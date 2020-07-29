@@ -135,8 +135,8 @@
 @media (max-width: 640px) {
 
   .recipe-show-title{
-    font-size: 18px;
-    margin-bottom: 15px;
+    font-size: 13px;
+    margin-bottom: 5px;
   }
 
   .post-edit-link{

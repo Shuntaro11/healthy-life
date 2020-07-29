@@ -48,7 +48,7 @@
   background-color: rgb(200, 200, 200);
 }
 
-.ate-table{
+.ate-nutrition-table{
   margin: 20px auto 50px;
   width: 950px;
   border: 1px solid dimgray;
@@ -116,9 +116,96 @@
   padding-right: 30px;
   font-size: 12px;
 }
+.notice-message-md{
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .ate-nutrition-table{
+    width: 100vw;
+    overflow-x: scroll;
+  }
+  .ate-food-table{
+    width: 100vw;
+    overflow-x: scroll;
+  }
+  .notice-message-md{
+    display: block;
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+  }
+}
 
 @media (max-width: 640px) {
   .delete-link{
     font-size: 10px;
+  }
+  .selected-food-display{
+    width: 80vw;
+    height: 20px;
+    line-height: 20px;
+    margin-bottom: 50px;
+  }
+  .search-food-result{
+    position: absolute;
+    top: 19px;
+    left: -1px;
+    width: 80vw;
+  }
+  .search-food-input{
+    margin-top: 5px;
+    width: 75vw;
+    height: 20px;
+    line-height: 20px;
+  }
+  .food-name-list{
+    width: 75vw;
+    max-height: 50vh;
+  }
+  .each-food-name{
+    font-size: 10px;
+    border-bottom: 1px solid rgb(200, 200, 200);
+  }
+  .ate-nutrition-table{
+    margin: 10px auto 20px;
+    font-size: 10px;
+  }
+  
+  .ate-table-cell{
+    width: 80px;
+    font-size: 10px;
+    line-height: 20px;
+  }
+  .ate-nutrition-table{
+    width: 750px;
+  }
+  .ate-table-row{
+    width: 750px;
+  }
+  .ate-food-name{
+    font-size: 10px;
+  }
+  .notice-message-md{
+    font-size: 10px;
+  }
+
+  .ate-index{
+    width: 720px;
+    margin-bottom: 20px;
+  }
+  .ate-index-row{
+    width: 720px;
+  }
+  .ate-index-row-first{
+    margin-top: 10px;
+    width: 720px;
+  }
+
+  .ate-nutrition-table{
+    width: 100vw;
+  }
+  .ate-food-table{
+    width: 100vw;
   }
 }
