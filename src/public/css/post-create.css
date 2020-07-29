@@ -35,10 +35,22 @@
   margin-bottom: 5px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 960px){
 
   .post-form-container{
     width: 90vw;
+    margin: 20px auto;
+    padding: 20px;
+  }
+
+  .post-info-input{
+    width:  100%;
+  }
+
+}
+@media (max-width: 640px) {
+
+  .post-form-container{
     padding: 10px;
     margin-top: 10px;
   }

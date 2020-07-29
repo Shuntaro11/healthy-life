@@ -69,9 +69,6 @@ textarea{
   text-align: center;
   color: #2F1C12;
 }
-.container-title-margin-top{
-  margin-top: 50px;
-}
 .form-button{
   position: relative;
   display: inline-block;
@@ -117,6 +114,12 @@ textarea{
     padding-left: 43vw;
     margin-bottom: 20px;
   }
+
+  .preview-wrapper{
+    padding-top: 50px;
+    width: 50vw;
+    height: 50vw;
+  }
 }
 
 @media (max-width: 640px) {
@@ -159,5 +162,10 @@ textarea{
     margin-top: 10px;
     font-size: 12px;
     border-radius: 2px;
+  }
+
+  .container-title{
+    font-size: 15px;
+    font-weight: normal;
   }
 }

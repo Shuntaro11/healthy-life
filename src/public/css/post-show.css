@@ -39,8 +39,6 @@
 }
 .recipe-show-content{
   width: 55vw;
-  max-height: 40vw;
-  overflow-y: scroll;
   margin: 20px auto;
   border: 1px solid silver;
   border-radius: 3px;
@@ -114,6 +112,26 @@
   margin-top: 10px;
 }
 
+@media (max-width: 960px) {
+
+  .recipe-show-title{
+    font-size: 20px;
+  }
+
+  .post-edit-link{
+    width: 90vw;
+  }
+
+  .post-show-image-wrapper{
+    width: 50vw;
+    height: 50vw;
+  }
+
+  .recipe-show-content{
+    width: 80vw;
+  }
+}
+
 @media (max-width: 640px) {
 
   .recipe-show-title{
@@ -155,7 +173,6 @@
 
   .recipe-show-content{
     width: 80vw;
-    max-height: none;
     padding: 5px;
     font-size: 12px;
   }
