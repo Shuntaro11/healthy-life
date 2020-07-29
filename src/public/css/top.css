@@ -175,7 +175,7 @@
 @media (max-width: 960px) {
   .page-title{
     margin-top: 5px;
-    font-size: 18px;
+    font-size: 20px;
   }
   .each-post{
     margin: 0 auto 20px;
@@ -281,10 +281,6 @@
 }
 
 @media (max-width: 640px) {
-
-  .page-title{
-    font-size: 15px;
-  }
 
   .each-post{
     margin: 0 auto 20px;

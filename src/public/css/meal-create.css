@@ -116,3 +116,9 @@
   padding-right: 30px;
   font-size: 12px;
 }
+
+@media (max-width: 640px) {
+  .delete-link{
+    font-size: 10px;
+  }
+}
