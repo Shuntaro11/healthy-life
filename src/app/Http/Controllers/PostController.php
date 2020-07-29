@@ -135,9 +135,11 @@ class PostController extends Controller
         Storage::disk('s3')->delete(basename($post->image)); //本番
 
         if(!empty($request['image'])){
+
             $image = $request->file('image'); //本番用
             $path = Storage::disk('s3')->put('/', $image, 'public'); //本番用
             // $path = $request->file('image')->store('public/img'); //ローカル用
+            
             $post->title = $request->title;
             // $post->image = basename($path); //ローカル用
             $post->image = Storage::disk('s3')->url($path); //本番用

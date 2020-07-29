@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use \App\User;
+use Storage;
 
 class UserController extends Controller
 {
@@ -39,11 +40,22 @@ class UserController extends Controller
         $user = Auth::user();
 
         if(!empty($request['user_image'])){
-            $path = $request['user_image']->store('public/img');
+
+            // Storage::delete('public/img/' . basename($user->user_image)); //ローカル
+            Storage::disk('s3')->delete(basename($user->user_image)); //本番
+
+            // $path = $request['user_image']->store('public/img'); //ローカル
+            $image = $request['user_image']; //本番用
+            $path = Storage::disk('s3')->put('/', $image, 'public'); //本番用
+
             $user->name = $request->name;
-            $user->user_image = basename($path);
+            // $user->user_image = basename($path); //ローカル用
+            $user->user_image = Storage::disk('s3')->url($path); //本番用
+
         }else{
+
             $user->name = $request->name;
+        
         }
         $user->save();
 
