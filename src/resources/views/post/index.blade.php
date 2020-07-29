@@ -10,7 +10,7 @@
                     <div class="top-bar">
                         <div class="user-info">
                             <div class="image-wrapper user-image-wrapper">
-                                <a href="/users/{{$post->user->id}}"><img class="inside-image" src="{{ asset('/storage/img/'.$post->user->user_image) }}" onerror="this.src='/noicon.png'"></a>
+                                <a href="/users/{{$post->user->id}}"><img class="inside-image" src="{{ $post->user->user_image }}" onerror="this.src='/noicon.png'"></a>
                             </div>
                         <a href="/users/{{$post->user->id}}"><p class="user-name">{{ $post->user->name }}</p></a>
                         </div>

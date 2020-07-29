@@ -21,6 +21,8 @@
                         <p class="form-label">アイコン画像</p>
                         <div><input type="file" name="user_image" id="userEditImage" accept="image/*"></div>
                                 <div class="preview-wrapper user-image-preview">
+                                    変更する場合は
+                                    <br>
                                     変更後のイメージを選択してください
                                     <br>
                                     円形にリサイズされます
