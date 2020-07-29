@@ -111,3 +111,27 @@ textarea{
   padding-top: 8vw;
   font-size: 13px;
 }
+
+@media (max-width: 640px) {
+  .main-container{
+    margin-top: 10px;
+  }
+
+  .nav-bar{
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px 30px;
+    border-radius: 0px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);;
+  }
+
+  .nav-bar p{
+    display: none;
+  }
+}

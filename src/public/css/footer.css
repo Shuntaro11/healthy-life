@@ -7,3 +7,12 @@
   line-height: 200px;
   font-size: 20px;
 }
+@media (max-width: 640px) {
+  .footer-container{
+    margin-top: 30px;
+  }
+  .footer-text{
+    line-height: 100px;
+    font-size: 10px;
+  }
+}

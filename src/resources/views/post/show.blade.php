@@ -22,7 +22,7 @@
 
                 <div class="user-info">
                     <a href="/users/{{$post->user->id}}"><div class="image-wrapper user-image-wrapper">
-                        <img class="inside-image" src="{{ $post->user->user_image) }}" onerror="this.src='/noicon.png'">
+                        <img class="inside-image" src="{{ $post->user->user_image }}" onerror="this.src='/noicon.png'">
                     </div></a>
                     <a href="/users/{{$post->user->id}}"><div class="user-name">{{ $post->user->name }}</div></a>
                 </div>
