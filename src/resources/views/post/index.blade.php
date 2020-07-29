@@ -23,7 +23,9 @@
                             </div>
                         </a>
                         <div class="right-box">
-                            <div class="post-title">{{ $post->title }}</div>
+                            <a href="{{ route('posts.show', $post->id) }}">
+                                <div class="post-title">{{ $post->title }}</div>
+                            </a>
                             <div class="post-content">{!! nl2br(e($post->content)) !!}</div>
                             <div class="post-tags">タグ：
                                 @foreach($post->tags as $tag)

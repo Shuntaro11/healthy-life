@@ -1,7 +1,7 @@
 <div id="app">
     <div class="header-container">
         <div class="header-container-top-bar">
-            <img class="header-logo" src="/healthylifelogo.png">
+        <a href="{{ route('top') }}"><img class="header-logo" src="/healthylifelogo.png"></a>
             <div class="auth-nav">
                 @auth
                     <div class="welcome-message">Login : {{Auth::user()->name}}</div>
