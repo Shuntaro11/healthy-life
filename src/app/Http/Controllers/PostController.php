@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use \App\Post;
 use \App\Tag;
+use Storage;
 
 class PostController extends Controller
 {
@@ -51,8 +52,10 @@ class PostController extends Controller
                 'image' => ['required', 'file', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
                 'content' => ['required', 'string', 'max:2000'],
             ]);
-    
-            $path = $request->file('image')->store('public/img');
+            
+            $image = $request->file('image'); //本番用
+            $path = Storage::disk('s3')->put('/', $image, 'public'); //本番用
+            // $path = $request->file('image')->store('public/img'); //ローカル用
     
             preg_match_all('/#([a-zA-Z0-9０-９ぁ-んァ-ヶー一-龠]+)/u', $request->content, $match);
             
@@ -72,7 +75,8 @@ class PostController extends Controller
             $post = new Post;
             $post->user_id = Auth::user()->id;
             $post->title = $request->title;
-            $post->image = basename($path);
+            // $post->image = basename($path); //ローカル用
+            $post->image = Storage::disk('s3')->url($path); //本番用
             $post->content = $request->content;
             
             $post->save();
@@ -126,11 +130,19 @@ class PostController extends Controller
             'image' => ['file', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
             'content' => ['required', 'string', 'max:2000'],
         ]);
+        
+        // Storage::delete('public/img/' . basename($post->image)); //ローカル
+        Storage::disk('s3')->delete(basename($post->image)); //本番
 
         if(!empty($request['image'])){
-            $path = $request['image']->store('public/img');
+
+            $image = $request->file('image'); //本番用
+            $path = Storage::disk('s3')->put('/', $image, 'public'); //本番用
+            // $path = $request->file('image')->store('public/img'); //ローカル用
+            
             $post->title = $request->title;
-            $post->image = basename($path);
+            // $post->image = basename($path); //ローカル用
+            $post->image = Storage::disk('s3')->url($path); //本番用
             $post->content = $request->content;
         }else{
             $post->title = $request->title;
@@ -167,11 +179,13 @@ class PostController extends Controller
         return view('post.show', compact('post', 'defaultCount', 'defaultLiked'));
     }
 
-    public function destroy ($id)
+    public function destroy (Post $post)
     {
-        Comment::destroy($id);
+        Post::destroy($post->id);
+        // Storage::delete('public/img/' . basename($post->image)); //ローカル
+        Storage::disk('s3')->delete(basename($post->image)); //本番
 
-        return back();
+        return redirect('/');
     }
 
     public function search(Request $request)

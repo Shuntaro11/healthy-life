@@ -22,7 +22,7 @@
 
                 <div class="user-info">
                     <a href="/users/{{$post->user->id}}"><div class="image-wrapper user-image-wrapper">
-                        <img class="inside-image" src="{{ asset('/storage/img/'.$post->user->user_image) }}" onerror="this.src='/noicon.png'">
+                        <img class="inside-image" src="{{ $post->user->user_image) }}" onerror="this.src='/noicon.png'">
                     </div></a>
                     <a href="/users/{{$post->user->id}}"><div class="user-name">{{ $post->user->name }}</div></a>
                 </div>
@@ -45,7 +45,7 @@
             <div class="recipe-show-title">{{ $post->title }}</div>
 
             <div class="image-wrapper post-show-image-wrapper">
-                <img class="inside-image" src="{{ asset('/storage/img/'.$post->image) }}">
+                <img class="inside-image" src="{{ $post->image }}">
             </div>
 
             <div class="recipe-show-content">{!! nl2br(e($post->content)) !!}</div>

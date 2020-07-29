@@ -3,7 +3,7 @@
         @include("header")
         <div class="show-user-name">{{ $user->name }}</div>
         <div class="image-wrapper show-user-image-wrapper">
-            <img class="inside-image" src="{{ asset('/storage/img/'.$user->user_image) }}" onerror="this.src='/noicon.png'">
+            <img class="inside-image" src="{{ $user->user_image }}" onerror="this.src='/noicon.png'">
         </div>
         @auth
             @if($user->id === Auth::user()->id)
@@ -18,7 +18,7 @@
             @foreach($user_posts as $post)
                 <a href="{{ route('posts.show', $post->id) }}">
                     <div class="image-wrapper user-post-image-wrapper">
-                        <img class="inside-image" src="{{ asset('/storage/img/'.$post->image) }}">
+                        <img class="inside-image" src="{{ $post->image }}">
                         <div class="hover-wrap">
                             <div class="hover-post-title">{{$post->title}}</div>
                             <div>
