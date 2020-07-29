@@ -35,6 +35,13 @@
                             </div>
                         </div>
                     </div>
+                    <div class="post-tags-sd">
+                        タグ：
+                        @foreach($post->tags as $tag)
+                            <a href="{{ route('top', ['name' => $tag->name]) }}">#{{ $tag->name }}</a>
+                        @endforeach
+                    </div>
+                    <div class="post-date-sd">{{ $post->created_at->format('Y/m/d H:i:s') }}</div>
                 </div>
             @endforeach
         </div>

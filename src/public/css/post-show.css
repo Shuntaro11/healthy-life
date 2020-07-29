@@ -39,8 +39,6 @@
 }
 .recipe-show-content{
   width: 55vw;
-  max-height: 40vw;
-  overflow-y: scroll;
   margin: 20px auto;
   border: 1px solid silver;
   border-radius: 3px;
@@ -109,5 +107,85 @@
   width: 60vw;
   margin: auto;
   padding-right: 10px;
-  padding-top: 10px;
+}
+.post-edit-link .delete-link{
+  margin-top: 10px;
+}
+
+@media (max-width: 960px) {
+
+  .recipe-show-title{
+    font-size: 20px;
+  }
+
+  .post-edit-link{
+    width: 90vw;
+  }
+
+  .post-show-image-wrapper{
+    width: 50vw;
+    height: 50vw;
+  }
+
+  .recipe-show-content{
+    width: 80vw;
+  }
+}
+
+@media (max-width: 640px) {
+
+  .recipe-show-title{
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+
+  .post-edit-link{
+    text-align: left;
+    justify-content: space-between;
+    width: 70vw;
+    display: flex;
+    padding: 0 10px;
+    margin-bottom: 10px;
+  }
+
+  .post-edit-link .delete-link{
+    margin: 0;
+    padding: 0;
+  }
+
+  .like-box{
+    line-height: 30px;
+    padding: 0;
+  }
+  .like-button{
+    margin-right: 5px;
+    font-size: 20px;
+  }
+  .like-count{
+    font-size: 10px;
+  }
+
+  .post-show-image-wrapper{
+    width: 80vw;
+    height: 80vw;
+    border: none;
+  }
+
+  .recipe-show-content{
+    width: 80vw;
+    padding: 5px;
+    font-size: 12px;
+  }
+  
+  .recipe-date{
+    margin-top: 5px;
+    font-size: 10px;
+  }
+
+  .comment-user-name{
+    font-size: 13px;
+  }
+  .comment-content{
+    font-size: 13px;
+  }
 }

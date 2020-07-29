@@ -3,17 +3,17 @@
         @include("header")
         <div class="page-title">レシピ</div>
   
-        <div class="post-form-container post-show-container">
+        <div class="post-form-container">
             @auth
                 <div class="post-edit-link">
                     @if($post->user_id === Auth::user()->id)
                         <a href="/posts/{{$post->id}}/edit">
-                            <div class="delete-link">このレシピを編集する</div>
+                            <div class="delete-link">レシピを編集する</div>
                         </a>
                         <form method="post" action="/posts/{{$post->id}}">
                         <input name="_method" type="hidden" value="DELETE">
                         {{ csrf_field()}}
-                            <button type="submit" class="delete-link">このレシピを削除する</button>
+                            <button type="submit" class="delete-link">レシピを削除する</button>
                         </form>
                     @endif
                 </div>
@@ -22,7 +22,7 @@
 
                 <div class="user-info">
                     <a href="/users/{{$post->user->id}}"><div class="image-wrapper user-image-wrapper">
-                        <img class="inside-image" src="{{ $post->user->user_image) }}" onerror="this.src='/noicon.png'">
+                        <img class="inside-image" src="{{ $post->user->user_image }}" onerror="this.src='/noicon.png'">
                     </div></a>
                     <a href="/users/{{$post->user->id}}"><div class="user-name">{{ $post->user->name }}</div></a>
                 </div>

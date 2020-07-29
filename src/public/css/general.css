@@ -35,19 +35,6 @@ textarea{
   padding-left: 43vw;
   margin-bottom: 100px;
 }
-.nav-link{
-  line-height: 30px;
-  font-size: 15px;
-  padding: 0 5px;
-  border: 1px solid #ACB6E5;
-  border-radius: 5px;
-  margin-left: 10px;
-  color: #1d68a7;
-}
-.nav-link:hover{
-  border: 1px solid #4c65d4;
-  color: #212529;
-}
 
 .nav-bar{
   width: 80vw;
@@ -81,9 +68,6 @@ textarea{
   font-weight: bold;
   text-align: center;
   color: #2F1C12;
-}
-.container-title-margin-top{
-  margin-top: 50px;
 }
 .form-button{
   position: relative;
@@ -123,4 +107,63 @@ textarea{
   height: 20vw;
   padding-top: 8vw;
   font-size: 13px;
+}
+
+@media (max-width: 960px) {
+  .pagination{
+    padding-left: 43vw;
+    margin-bottom: 20px;
+  }
+
+  .preview-wrapper{
+    padding-top: 50px;
+    width: 50vw;
+    height: 50vw;
+  }
+}
+
+@media (max-width: 640px) {
+  .main-container{
+    margin-top: 10px;
+  }
+
+  .nav-bar{
+    width: 100vw;
+    background-color: white;
+    padding: 10px 30px;
+    border-radius: 0px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-bar p{
+    display: none;
+  }
+
+  .pagination{
+    padding-left: 33vw;
+  }
+
+  .preview-wrapper{
+    border: 1px dashed darkgray;
+    width: 40vw;
+    height: 40vw;
+    font-size: 10px;
+    padding-top: 20px;
+  }
+
+  .form-button{
+    padding: 3px 10px;
+    margin-top: 10px;
+    font-size: 12px;
+    border-radius: 2px;
+  }
+
+  .container-title{
+    font-size: 15px;
+    font-weight: normal;
+  }
 }

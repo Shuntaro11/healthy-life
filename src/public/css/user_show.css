@@ -23,10 +23,27 @@
 }
 .user-edit-link{
   border: 1px solid rgba(0, 0, 0, 0.1);
-  margin: 10px auto;
+  margin: 10px auto 50px;
   width: 200px;
   text-align: center;
   border-radius: 3px;
   font-size: 15px;
   background: whitesmoke;
+}
+
+@media (max-width: 640px) {
+  .show-user-name{
+    font-size: 18px;
+  }
+  .show-user-image-wrapper{
+    width: 70px;
+    height: 70px;
+  }
+  .user-edit-link{
+    margin: 5px auto;
+    width: 100px;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 10px;
+  }
 }
