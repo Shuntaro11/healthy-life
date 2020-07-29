@@ -18,7 +18,7 @@
             @foreach($user_posts as $post)
                 <a href="{{ route('posts.show', $post->id) }}">
                     <div class="image-wrapper user-post-image-wrapper">
-                        <img class="inside-image" src="{{ asset('/storage/img/'.$post->image) }}">
+                        <img class="inside-image" src="{{ $post->image }}">
                         <div class="hover-wrap">
                             <div class="hover-post-title">{{$post->title}}</div>
                             <div>
