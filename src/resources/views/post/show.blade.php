@@ -3,7 +3,7 @@
         @include("header")
         <div class="page-title">レシピ</div>
   
-        <div class="post-form-container post-show-container">
+        <div class="post-form-container">
             @auth
                 <div class="post-edit-link">
                     @if($post->user_id === Auth::user()->id)

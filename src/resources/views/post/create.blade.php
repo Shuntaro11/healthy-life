@@ -19,9 +19,12 @@
                         <p class="post-form-notice">料理名を30文字以内で入力してください</p>
                         <div class="post-title-wrapper"><input type="text" name="title" placeholder="料理名" class="post-input" size="30"  value="{{ old('title') }}"></div>
                         <p class="form-label">料理の写真</p>
-                        <div><input type="file" name="image" id="recipeImage" accept="image/*"></div>
+                        <div><input class="post-input-image" type="file" name="image" id="recipeImage" accept="image/*"></div>
                         <div class="preview-wrapper">
-                            イメージを選択してください
+                            イメージを
+                            <br>
+                            選択してください
+                            <br>
                             <br>
                             正方形にリサイズされます
                         <img class="inside-image" id="recipeImagePreview"></div>
