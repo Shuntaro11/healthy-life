@@ -24,3 +24,4 @@ Route::resource('users', 'UserController')->only(['show', 'edit', 'destroy']);
 Route::resource('likes', 'LikeController')->only(['index']);
 Route::resource('meals', 'MealController')->only(['create', 'store', 'destroy']);
 Route::resource('comments', 'CommentController')->only(['store', 'destroy']);
+Route::resource('body_values', 'BodyValueController')->only(['store', 'destroy']);

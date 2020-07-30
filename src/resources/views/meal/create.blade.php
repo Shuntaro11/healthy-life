@@ -9,18 +9,36 @@
         <a href="/users/{{Auth::user()->id}}/edit">
             <div class="user-edit-link">プロフィール編集</div>
         </a>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        <div class="body-value-container">
+            <div class="post-form-container body-value-form-container">
+                <p class="container-title">身体測定値</p>
+                <form action="/body_values" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                    <p class="form-label">日付</p>
+                    <div><input type="date" name="date" value={{$today}} class="post-input input-date"></div>
+                    <p class="form-label">体重(kg)</p>
+                    <div><input type="number" step="0.1" min="20" max="500" name="weight" class="post-input input-quantity"></div>
+                    <p class="form-label">身長(cm)</p>
+                    <div><input type="number" step="0.1" min="50" max="300" name="height" class="post-input input-quantity"></div>
+                    <button type="submit" class="form-button">登録</button>
+                </form>
+            </div>
+            <div>
+                グラフがきます
+            </div>
+        </div>
         <div class="post-form-container">
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
             <form action="/meals" method="post" enctype="multipart/form-data">
-            {{ csrf_field() }}
+                {{ csrf_field() }}
                 <div>
                     <p class="container-title">食べたものを登録する</p>
                     <p class="form-label">日付</p>

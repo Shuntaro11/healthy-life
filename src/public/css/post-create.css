@@ -7,6 +7,10 @@
   background: white;
   padding: 10px 20px;
 }
+.body-value-form-container{
+  margin: 0;
+  width: 30vw;
+}
 
 .edit-image-container{
   display: flex;
@@ -83,6 +87,10 @@
     width: 80vw;
     line-height: 20px;
     font-size: 13px;
+  }
+
+  .input-quantity{
+    width: 100px;
   }
 
   .post-input-image{

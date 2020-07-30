@@ -1,3 +1,9 @@
+.body-value-container{
+  display: flex;
+  justify-content: space-between;
+  width: 90vw;
+  margin: auto;
+}
 .selected-food-display{
   width: 400px;
   height: 40px;
@@ -121,6 +127,12 @@
 }
 
 @media (max-width: 960px) {
+
+  .body-value-container{
+    flex-direction: column;
+    text-align: center;
+  }
+
   .ate-nutrition-table{
     width: 100vw;
     overflow-x: scroll;
