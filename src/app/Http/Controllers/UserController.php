@@ -103,4 +103,20 @@ class UserController extends Controller
         $user_posts = $user->posts()->latest()->get();
         return view('user.show', compact('user', 'user_posts'));
     }
+
+    public function destroy ()
+    {
+        $auth = Auth::user();
+        // Storage::delete('public/img/' . basename($auth->user_image)); //ローカル
+        Storage::disk('s3')->delete(basename($auth->user_image)); //本番
+
+        $auth_posts = $auth->posts()->get();
+        foreach ($auth_posts as $post) {
+            Storage::disk('s3')->delete(basename($post->image)); //本番
+        }
+
+        User::destroy($auth->id);
+
+        return redirect('/');
+    }
 }
