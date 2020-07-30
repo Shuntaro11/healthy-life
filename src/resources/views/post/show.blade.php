@@ -11,9 +11,9 @@
                             <div class="delete-link">レシピを編集する</div>
                         </a>
                         <form method="post" action="/posts/{{$post->id}}">
-                        <input name="_method" type="hidden" value="DELETE">
-                        {{ csrf_field()}}
-                            <button type="submit" class="delete-link">レシピを削除する</button>
+                            <input name="_method" type="hidden" value="DELETE">
+                            {{ csrf_field()}}
+                                <button type="submit" class="delete-link" onClick="delete_alert(event);return false;">レシピを削除する</button>
                         </form>
                     @endif
                 </div>
@@ -92,7 +92,7 @@
                             <form method="post" action="/comments/{{$comment->id}}">
                             <input name="_method" type="hidden" value="DELETE">
                             {{ csrf_field()}}
-                                <button type="submit" class="delete-link">コメントを削除する</button>
+                                <button type="submit" class="delete-link" onClick="delete_alert(event);return false;">コメントを削除する</button>
                             </form>
                         @endif
                     @endauth
@@ -104,5 +104,6 @@
         @include("footer")
         </div>
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ asset('js/delete_confirm.js') }}" defer></script>
     </body>
 </html>

@@ -116,6 +116,7 @@
     width: 20px;
     line-height: 20px;
     border-radius: 3px;
+    border: 1px solid orange;
   }
   .search-btn i{
     font-size: 10px;

@@ -87,6 +87,13 @@ textarea{
   border-bottom: solid 2px #fd9535;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
 }
+.retire-button{
+  background: #fd3535;
+  border-bottom: solid 2px #d20000;
+}
+.retire-button:active {
+  border-bottom: solid 2px #fd3535;
+}
 .preview-wrapper{
   position: relative;
   width: 30vw;
@@ -108,6 +115,11 @@ textarea{
   padding-top: 8vw;
   font-size: 13px;
 }
+.food-image-preview{
+  width: 20vw;
+  height: 20vw;
+  font-size: 13px;
+}
 
 @media (max-width: 960px) {
   .pagination{
@@ -120,6 +132,17 @@ textarea{
     width: 50vw;
     height: 50vw;
   }
+
+  .user-image-preview{
+    width: 30vw;
+    height: 30vw;
+  }
+
+  .food-image-preview{
+    width: 30vw;
+    height: 30vw;
+  }
+  
 }
 
 @media (max-width: 640px) {
@@ -153,6 +176,18 @@ textarea{
     height: 40vw;
     font-size: 10px;
     padding-top: 20px;
+  }
+
+  .user-image-preview{
+    width: 30vw;
+    height: 30vw;
+    padding-top: 10px;
+  }
+
+  .food-image-preview{
+    width: 30vw;
+    height: 30vw;
+    padding-top: 10px;
   }
 
   .form-button{
