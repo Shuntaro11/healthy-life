@@ -35,13 +35,11 @@
   height: 40vw;
   margin: auto;
   border: 1px solid silver;
-  
+  background-color: rgb(240, 240, 240);
 }
 .recipe-show-content{
   width: 55vw;
   margin: 20px auto;
-  border: 1px solid silver;
-  border-radius: 3px;
   padding: 20px;
   text-align: left;
 }

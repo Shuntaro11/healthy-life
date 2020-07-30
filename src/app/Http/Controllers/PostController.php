@@ -130,11 +130,11 @@ class PostController extends Controller
             'image' => ['file', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
             'content' => ['required', 'string', 'max:2000'],
         ]);
-        
-        // Storage::delete('public/img/' . basename($post->image)); //ローカル
-        Storage::disk('s3')->delete(basename($post->image)); //本番
 
         if(!empty($request['image'])){
+
+            // Storage::delete('public/img/' . basename($post->image)); //ローカル
+            Storage::disk('s3')->delete(basename($post->image)); //本番
 
             $image = $request->file('image'); //本番用
             $path = Storage::disk('s3')->put('/', $image, 'public'); //本番用

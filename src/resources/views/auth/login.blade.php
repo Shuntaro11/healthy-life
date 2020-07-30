@@ -13,7 +13,7 @@
                     </div>
                 @endif
                 <form method="POST" action="{{ route('login') }}">
-                @csrf
+                    @csrf
                     
                     <div class="form-label">メールアドレス</div>
                     <div><input id="email" type="email" name="email" class="post-input" value="{{ old('email') }}" required autocomplete="email" autofocus></div>
@@ -21,7 +21,7 @@
                     <div class="form-label">パスワード</div>
                     <div><input id="password" type="password" name="password" class="post-input" required autocomplete="current-password"></div>
 
-                    <button type="submit" class="form-button">サインイン</button>
+                    <button type="submit" class="form-button">ログイン</button>
 
                 </form>
             </div>

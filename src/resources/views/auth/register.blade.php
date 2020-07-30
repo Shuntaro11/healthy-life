@@ -34,7 +34,7 @@
                         <br>
                         円形にリサイズされます
                     <img class="inside-image" id="userImagePreview"></div>
-                    <button type="submit" class="form-button">サインイン</button>
+                    <button type="submit" class="form-button">新規登録</button>
 
                 </form>
             </div>

@@ -1,7 +1,7 @@
 @extends('template')
     <body>
         @include("header")
-        <div class="page-title">食事管理</div>
+        <div class="page-title">マイデータ</div>
         <div class="show-user-name">{{ Auth::user()->name }}</div>
         <div class="image-wrapper show-user-image-wrapper">
             <img class="inside-image" src="{{ Auth::user()->user_image }}" onerror="this.src='/noicon.png'">
