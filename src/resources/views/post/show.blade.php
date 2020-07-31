@@ -36,7 +36,7 @@
                         ></like>
                     @else
                         <div class="like-box">
-                            <p class="like-btn-wrapper"><i class="fas fa-heart like-button un-like-button"></i></p>
+                            <p class="like-btn-wrapper"><i class="far fa-heart like-button"></i></p>
                             <p class="like-count">{{ $post->likes->count() }} 件</p>
                         </div>
                     @endauth
