@@ -13,7 +13,7 @@
                     </div>
                 @endif
                 <form action="/posts" method="post" enctype="multipart/form-data">
-                {{ csrf_field() }}
+                    @csrf
                     <div>
                         <p class="form-label">レシピタイトル</p>
                         <p class="post-form-notice">料理名を30文字以内で入力してください</p>

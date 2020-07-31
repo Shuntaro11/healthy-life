@@ -14,7 +14,7 @@
                 @endif
                 <form action="/users" method="post" enctype="multipart/form-data">
                     @method('PUT')
-                    {{ csrf_field() }}
+                    @csrf
                     <div>
                         <p class="form-label">ユーザーネーム</p>
                         <div><input type="text" name="name" value="{{ $auth->name }}" class="post-input"></div>

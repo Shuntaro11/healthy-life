@@ -15,7 +15,7 @@
                 
                 <form action="{{ route('posts.update', ['post' => $post]) }}" method="post" enctype="multipart/form-data">
                     @method('PUT')
-                    {{ csrf_field() }}
+                        @csrf
                     <div>
                         <p class="form-label">レシピタイトル</p>
                         <p class="post-form-notice">料理名を30文字以内で入力してください</p>

@@ -72,7 +72,7 @@
                     </div>
                 @endif
                 <form action="/comments" method="post" enctype="multipart/form-data" class="comment-form">
-                {{ csrf_field() }}
+                    @csrf
                     <div><textarea name="comment" class="comment-input" rows="2" placeholder="コメントを追加"></textarea></div>
                     <input name="post_id" type="hidden" value="{{$post->id}}">
                     <button type="submit" class="comment-btn">投稿する</button>
