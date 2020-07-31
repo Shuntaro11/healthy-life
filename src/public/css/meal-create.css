@@ -3,6 +3,25 @@
   justify-content: space-between;
   width: 90vw;
   margin: auto;
+  position: relative;
+  margin-bottom: 50px;
+}
+.bmi-container{
+  height: 100%;
+  border: solid 1px rgb(201, 197, 197);
+  border-radius: 3px;
+  background-color: white;
+  padding: 15px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.bmi-chart{
+  width: 55vw;
+  padding: 50px 0;
+  height: 100%;
+  line-height: 100%;
+  position: relative;
 }
 .selected-food-display{
   width: 400px;
@@ -131,6 +150,20 @@
   .body-value-container{
     flex-direction: column;
     text-align: center;
+    width: 100vw;
+    margin-bottom: 30px;
+  }
+
+  .bmi-container{
+    height: 250px;
+    position: static;
+    width: 100vw;
+  }
+
+  .bmi-chart{
+    width: 95vw;
+    padding: 10px 0 20px;
+    line-height: 200px;
   }
 
   .ate-nutrition-table{
@@ -150,6 +183,7 @@
 }
 
 @media (max-width: 640px) {
+
   .delete-link{
     font-size: 10px;
   }
@@ -220,4 +254,18 @@
   .ate-food-table{
     width: 100vw;
   }
+}
+
+@media (max-width: 500px) {
+
+  .bmi-container{
+    height: 25vh;
+    padding: 0;
+  }
+
+  .bmi-chart{
+    line-height: 20vh;
+    padding-right: 0;
+  }
+
 }

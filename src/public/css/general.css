@@ -35,6 +35,9 @@ textarea{
   padding-left: 43vw;
   margin-bottom: 100px;
 }
+.validation-message{
+  color: tomato;
+}
 
 .nav-bar{
   width: 80vw;

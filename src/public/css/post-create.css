@@ -92,6 +92,9 @@
   .input-quantity{
     width: 100px;
   }
+  .input-date{
+    width: 130px;
+  }
 
   .post-input-image{
     width: 60vw;

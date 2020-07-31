@@ -48,19 +48,19 @@
             @endforeach
         </div>
         <div class="pagination-wrapper">
-        @if(isset($name))
-            {{ $posts->appends(['name' => $name])->links() }}
+            @if(isset($name))
+                {{ $posts->appends(['name' => $name])->links() }}
 
-        @elseif(isset($search_query))
-            {{ $posts->appends(['search' => $search_query])->links() }}
+            @elseif(isset($search_query))
+                {{ $posts->appends(['search' => $search_query])->links() }}
 
-        @else
-            {{ $posts->links() }}
-        @endif
+            @else
+                {{ $posts->links() }}
+            @endif
         </div>
         @include("nav-bar")
         @include("footer")
-        </div>
+        
         <script src="{{ asset('js/app.js') }}" defer></script>
     </body>
 </html>
