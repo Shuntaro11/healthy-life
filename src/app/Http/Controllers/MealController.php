@@ -32,11 +32,23 @@ class MealController extends Controller
         $sixDaysAgoProtein, $sixDaysAgoFat, $sixDaysAgoCarbon, $sixDaysAgoVitaminb1, $sixDaysAgoVitaminc,
         $sixDaysAgoSalt, $sixDaysAgoDietaryFiber, $sixDaysAgoCalcium]=Nutrient::getNutrients();
 
-        $days=array('1/1', '1/2', '1/3', '1/4', '1/5', '1/6', '1/7', '1/1', '1/2', '1/3', '1/4', '1/5', '1/6', '1/7');
-        $bmis=array(20, 21, 23, 20, 22, 21, 20, 20, 21, 23, 20, 22, 21, 20);
+        $auth = Auth::user();
+        $body_values = $auth->body_values()->orderBy('date','asc')->take(14)->get();
+
+        $days = array();
+        $bmis = array();
+
+        $height = 0;
+
+        foreach ($body_values as $value) {
+            array_push($days,$value->date);
+            array_push($bmis,$value->bmi);
+            $height = $value->height;
+        }
 
         return view('meal.create', compact(
             'days',
+            'height',
             'bmis',
             'meals',
             'today',
@@ -138,11 +150,23 @@ class MealController extends Controller
         $sixDaysAgoProtein, $sixDaysAgoFat, $sixDaysAgoCarbon, $sixDaysAgoVitaminb1, $sixDaysAgoVitaminc,
         $sixDaysAgoSalt, $sixDaysAgoDietaryFiber, $sixDaysAgoCalcium]=Nutrient::getNutrients();
 
-        $days=array('1/1', '1/2', '1/3', '1/4', '1/5', '1/6', '1/7', '1/1', '1/2', '1/3', '1/4', '1/5', '1/6', '1/7');
-        $bmis=array(20, 21, 23, 20, 22, 21, 20, 20, 21, 23, 20, 22, 21, 20);
+        $auth = Auth::user();
+        $body_values = $auth->body_values()->orderBy('date','asc')->take(14)->get();
+
+        $days = array();
+        $bmis = array();
+
+        $height = 0;
+
+        foreach ($body_values as $value) {
+            array_push($days,$value->date);
+            array_push($bmis,$value->bmi);
+            $height = $value->height;
+        }
         
         return view('meal.create', compact(
             'days',
+            'height',
             'bmis',
             'meals',
             'today',
@@ -230,13 +254,26 @@ class MealController extends Controller
         $sixDaysAgoProtein, $sixDaysAgoFat, $sixDaysAgoCarbon, $sixDaysAgoVitaminb1, $sixDaysAgoVitaminc,
         $sixDaysAgoSalt, $sixDaysAgoDietaryFiber, $sixDaysAgoCalcium]=Nutrient::getNutrients();
 
-        $days=array('1/1', '1/2', '1/3', '1/4', '1/5', '1/6', '1/7', '1/1', '1/2', '1/3', '1/4', '1/5', '1/6', '1/7');
-        $bmis=array(20, 21, 23, 20, 22, 21, 20, 20, 21, 23, 20, 22, 21, 20);
+        $auth = Auth::user();
+        $body_values = $auth->body_values()->orderBy('date','asc')->take(14)->get();
+
+        $days = array();
+        $bmis = array();
+
+        $height = 0;
+
+        foreach ($body_values as $value) {
+            array_push($days,$value->date);
+            array_push($bmis,$value->bmi);
+            $height = $value->height;
+        }
         
         return view('meal.create', compact(
             'days',
+            'height',
             'bmis',
             'meals',
+            'today',
             'todaysEnergy',
             'todaysProtein',
             'todaysFat',

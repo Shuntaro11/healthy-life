@@ -26,6 +26,17 @@ class BodyValueController extends Controller
         $body_values->user_id = Auth::user()->id;
         
         $body_values->save();
+
+        $auth = Auth::user();
+        $body_values = $auth->body_values()->latest()->take(14)->get();
+
+        $days = array();
+        $bmis = array();
+        
+        foreach ($body_values as $value) {
+            array_push($days,$value->date);
+            array_push($bmis,$value->bmi);
+        }
         
         return back();
     }

@@ -15,7 +15,7 @@
         
         <div class="body-value-container">
             <div class="post-form-container body-value-form-container">
-                <p class="container-title">身体測定値</p>
+                <p class="container-title">体重・身長</p>
                 <form action="/body_values" method="post" enctype="multipart/form-data">
                     @csrf
                     <p class="form-label">日付</p>
@@ -26,20 +26,25 @@
                     @if ($errors->first('weight'))
                         <p class="validation validation-message">※{{$errors->first('weight')}}</p>
                     @endif
-                    
+                                        
                     <p class="form-label">身長(cm)</p>
-                    <div><input type="number" step="0.1" min="50" max="300" name="height" class="post-input input-quantity"></div>
+                    @if ($height === 0)
+                        <div><input type="number" step="0.1" min="50" max="300" name="height" class="post-input input-quantity"></div>
+                    @else
+                        <div><input type="number" step="0.1" min="50" max="300" name="height" value={{$height}} class="post-input input-quantity"></div>
+                    @endif
                     
-                        @if ($errors->first('height'))
-                            <p class="validation validation-message">※{{$errors->first('height')}}</p>
-                        @endif
+                    
+                    @if ($errors->first('height'))
+                        <p class="validation validation-message">※{{$errors->first('height')}}</p>
+                    @endif
                     
                     <button type="submit" class="form-button">登録</button>
                 </form>
             </div>
             
             <div class="bmi-container">
-                <p class="container-title">BMI値</p>
+                <p class="container-title">BMI値 (過去14日間)</p>
                 <div class="bmi-chart">
                     <canvas id="bmi-chart">
                         <script>
