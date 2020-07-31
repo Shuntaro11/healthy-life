@@ -13,7 +13,7 @@
                     </div>
                 @endif
                 <form action="/posts" method="post" enctype="multipart/form-data">
-                {{ csrf_field() }}
+                    @csrf
                     <div>
                         <p class="form-label">レシピタイトル</p>
                         <p class="post-form-notice">料理名を30文字以内で入力してください</p>
@@ -55,7 +55,7 @@
         </div>
         @include("nav-bar")
         @include("footer")
-        </div>
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="{{ asset('/js/image.js') }}"></script>
     </body>

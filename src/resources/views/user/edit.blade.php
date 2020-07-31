@@ -14,7 +14,7 @@
                 @endif
                 <form action="/users" method="post" enctype="multipart/form-data">
                     @method('PUT')
-                    {{ csrf_field() }}
+                    @csrf
                     <div>
                         <p class="form-label">ユーザーネーム</p>
                         <div><input type="text" name="name" value="{{ $auth->name }}" class="post-input"></div>
@@ -47,7 +47,7 @@
             </div>
         @include("nav-bar")
         @include("footer")
-        </div>
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="{{ asset('/js/image.js') }}" defer></script>
         <script src="{{ asset('js/retire_confirm.js') }}" defer></script>

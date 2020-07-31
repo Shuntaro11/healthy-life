@@ -24,7 +24,7 @@ class PostController extends Controller
 
         }else {
             $search_result = '新着レシピ！！';
-            $posts = Post::latest()->paginate(5);;
+            $posts = Post::latest()->paginate(5);
             return view('post.index', compact('posts', 'search_result'));
         }
 

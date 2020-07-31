@@ -26,20 +26,21 @@
                     </div></a>
                     <a href="/users/{{$post->user->id}}"><div class="user-name">{{ $post->user->name }}</div></a>
                 </div>
-
-                @auth
-                    <like
-                        :post-id="{{ json_encode($post->id) }}"
-                        :user-id="{{ json_encode(Auth::user()->id) }}"
-                        :default-Liked="{{ json_encode($defaultLiked) }}"
-                        :default-Count="{{ json_encode($defaultCount) }}"
-                    ></like>
-                @else
-                    <div class="like-box">
-                        <p class="like-btn-wrapper"><i class="fas fa-heart like-button un-like-button"></i></p>
-                        <p class="like-count">{{ $post->likes->count() }} 件</p>
-                    </div>
-                @endauth
+                <div id="app">
+                    @auth
+                        <like
+                            :post-id="{{ json_encode($post->id) }}"
+                            :user-id="{{ json_encode(Auth::user()->id) }}"
+                            :default-Liked="{{ json_encode($defaultLiked) }}"
+                            :default-Count="{{ json_encode($defaultCount) }}"
+                        ></like>
+                    @else
+                        <div class="like-box">
+                            <p class="like-btn-wrapper"><i class="fas fa-heart like-button un-like-button"></i></p>
+                            <p class="like-count">{{ $post->likes->count() }} 件</p>
+                        </div>
+                    @endauth
+                </div>
             </div>
             
             <div class="recipe-show-title">{{ $post->title }}</div>
@@ -72,7 +73,7 @@
                     </div>
                 @endif
                 <form action="/comments" method="post" enctype="multipart/form-data" class="comment-form">
-                {{ csrf_field() }}
+                    @csrf
                     <div><textarea name="comment" class="comment-input" rows="2" placeholder="コメントを追加"></textarea></div>
                     <input name="post_id" type="hidden" value="{{$post->id}}">
                     <button type="submit" class="comment-btn">投稿する</button>
@@ -102,7 +103,7 @@
         
         @include("nav-bar")
         @include("footer")
-        </div>
+        
         <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="{{ asset('js/delete_confirm.js') }}" defer></script>
     </body>

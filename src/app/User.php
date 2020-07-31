@@ -56,4 +56,9 @@ class User extends Authenticatable
         return $this->hasMany('App\Comment');
     }
 
+    public function body_values()
+    {
+        return $this->hasMany('App\BodyValue');
+    }
+
 }

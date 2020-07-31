@@ -1,6 +1,9 @@
 @extends('template')
     <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
         @include("header")
+        
         <div class="page-title">マイデータ</div>
         <div class="show-user-name">{{ Auth::user()->name }}</div>
         <div class="image-wrapper show-user-image-wrapper">
@@ -9,26 +12,119 @@
         <a href="/users/{{Auth::user()->id}}/edit">
             <div class="user-edit-link">プロフィール編集</div>
         </a>
-        <div class="post-form-container">
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
+        
+        <div class="body-value-container">
+            <div class="post-form-container body-value-form-container">
+                <p class="container-title">体重・身長</p>
+                <form action="/body_values" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <p class="form-label">日付</p>
+                    <div><input type="date" name="date" value={{$today}} class="post-input input-date"></div>
+                    <p class="form-label">体重(kg)</p>
+                    <div><input type="number" step="0.1" min="20" max="500" name="weight" class="post-input input-quantity"></div>
+                    
+                    @if ($errors->first('weight'))
+                        <p class="validation validation-message">※{{$errors->first('weight')}}</p>
+                    @endif
+                                        
+                    <p class="form-label">身長(cm)</p>
+                    @if ($height === 0)
+                        <div><input type="number" step="0.1" min="50" max="300" name="height" class="post-input input-quantity"></div>
+                    @else
+                        <div><input type="number" step="0.1" min="50" max="300" name="height" value={{$height}} class="post-input input-quantity"></div>
+                    @endif
+                    
+                    
+                    @if ($errors->first('height'))
+                        <p class="validation validation-message">※{{$errors->first('height')}}</p>
+                    @endif
+                    
+                    <button type="submit" class="form-button">登録</button>
+                </form>
+            </div>
+            
+            <div class="bmi-container">
+                <p class="container-title">BMI値 (過去14日間)</p>
+                <div class="bmi-chart">
+                    <canvas id="bmi-chart">
+                        <script>
+
+                            var w = $('.bmi-chart').width();
+                            var h = $('.bmi-chart').height();
+                            $('#bmi-chart').attr('width', w);
+                            $('#bmi-chart').attr('height', h);
+
+                            const days = @json($days);
+                            const bmis = @json($bmis);
+
+                            var ctx = document.getElementById("bmi-chart");
+                            var myLineChart = new Chart(ctx, {
+                                type: 'line',
+                                data: {
+                                labels: days,
+                                datasets: [
+                                    {
+                                    label: 'BMI',
+                                    data: bmis,
+                                    borderColor: "#df5f4a",
+                                    pointBackgroundColor : "#fff",
+                                    pointBorderColor : "#2a324e",
+                                    lineTension: 0,
+                                    borderWidth: 2,
+                                    pointBorderWidth: 3,
+                                    backgroundColor: "rgba(0,0,0,0)",
+                                    },
+                                ],
+                                },
+                                options: {
+
+                                    title: {
+                                        display: false,
+                                    },
+                                    
+                                    legend: {
+                                        display: false,
+                                    },
+
+                                    scales: {
+                                        yAxes: [{
+                                            ticks: {
+                                                stepSize: 0.5,
+                                            },
+                                        }]
+                                    },
+
+                                    maintainAspectRatio: false,
+                                }
+                            });
+                        </script>
+                    </canvas>
                 </div>
-            @endif
+            </div>
+        </div>
+        <div class="post-form-container">
             <form action="/meals" method="post" enctype="multipart/form-data">
-            {{ csrf_field() }}
+                @csrf
                 <div>
                     <p class="container-title">食べたものを登録する</p>
                     <p class="form-label">日付</p>
                     <div><input type="date" name="ate_at" value={{$today}} class="post-input input-date"></div>
                     <p class="form-label">食材</p>
-                    <food-name-search></food-name-search>
+                    <div id="app">
+                        <food-name-search></food-name-search>
+                    </div>
+                    
+                        @if ($errors->first('food_name'))
+                            <p class="validation validation-message">※{{$errors->first('food_name')}}</p>
+                        @endif
+                    
                     <p class="form-label">量(g)</p>
                     <div><input type="number" name="quantity" class="post-input input-quantity"></div>
+
+                        @if ($errors->first('quantity'))
+                            <p class="validation validation-message">※{{$errors->first('quantity')}}</p>
+                        @endif
+
                     <button class="form-button" type="submit">登録</button>
                 </div>
             </form>
@@ -182,7 +278,7 @@
         
         @include("nav-bar")
         @include("footer")
-        </div>
+        
         <script src="{{ asset('js/app.js') }}" defer></script>
     </body>
 </html>
