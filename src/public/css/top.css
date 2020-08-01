@@ -172,10 +172,7 @@
 }
 
 @media (max-width: 960px) {
-  .page-title{
-    margin-top: 5px;
-    font-size: 25px;
-  }
+  
   .each-post{
     margin: 0 auto 20px;
     width: 90vw;
@@ -281,9 +278,12 @@
 }
 
 @media (max-width: 640px) {
-  .page-title{
-    font-size: 18px;
+
+  .confirm-link{
+    line-height: 30px;
+    font-size: 10px;
   }
+
   .each-post{
     margin: 0 auto 20px;
     width: 100vw;

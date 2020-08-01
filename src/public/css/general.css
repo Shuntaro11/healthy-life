@@ -135,6 +135,12 @@ textarea{
 }
 
 @media (max-width: 960px) {
+
+  .page-title{
+    margin-top: 5px;
+    font-size: 25px;
+  }
+
   .pagination{
     padding-left: 43vw;
     margin-bottom: 20px;
@@ -161,6 +167,10 @@ textarea{
 @media (max-width: 640px) {
   .main-container{
     margin-top: 10px;
+  }
+
+  .page-title{
+    font-size: 18px;
   }
 
   .nav-bar{
