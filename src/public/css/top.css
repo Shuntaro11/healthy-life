@@ -1,10 +1,9 @@
-.page-title{
+.confirm-link{
   text-align: center;
-  margin-top: 20px;
-  font-size: 30px;
-  font-weight: bold;
-  color: darkorange;
+  background-color: blanchedalmond;
+  line-height: 50px;
 }
+
 .each-post{
   margin: 0 auto 70px;
   width: 50vw;

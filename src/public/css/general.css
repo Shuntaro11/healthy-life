@@ -28,9 +28,19 @@ textarea{
   border-radius: 3px;
   background: white;
 }
+
 .container{
   text-align: center;
 }
+
+.page-title{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  color: darkorange;
+}
+
 .pagination{
   padding-left: 43vw;
   margin-bottom: 100px;

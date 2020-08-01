@@ -1,6 +1,12 @@
 @extends('template')
     <body>
         @include("header")
+        @auth
+
+        @else
+            <a href="/users/confirm"><div class="confirm-link">ヘルシーライフに登録すると様々な機能が利用できます！</div></a>
+        @endauth
+
         @isset($search_result)
             <div class="page-title">{{ $search_result }}</div>
         @endisset

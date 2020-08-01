@@ -44,7 +44,6 @@
 .recommend-btn{
   line-height: 100px;
   padding: 15px;
-  width: 540px;
   text-shadow: 0 -1px 0 #bd5e00;
   border: 1px solid #cc6600;
   background: linear-gradient(to bottom, #ff9124, #f07700);
@@ -57,4 +56,55 @@
 }
 .orange-text{
   color: #ff7f00;
+}
+
+@media (max-width: 960px) {
+  .recommend-container h2{
+    font-size: 25px;
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 640px) {
+
+  .recommend-container{
+    padding: 10px 0;
+  }
+
+  .recommend-container h2{
+    font-size: 20px;
+    margin-top: 20px;
+    padding: 0 20px;
+  }
+
+  .recommend-container h3{
+    font-size: 15px;
+    padding: 0 20px;
+  }
+
+  .recommend-container h5{
+    font-size: 13px;
+    margin-top: 20px;
+    padding: 0 20px;
+  }
+
+  .recommend-btn{
+    line-height: 50px;
+    padding: 7px;
+    font-size: 15px;
+    border-radius: 3px;
+  }
+
+  .recommend-container .title-bar{
+    font-size: 10px;
+    line-height: 30px;
+    font-weight: bold;
+  }
+
+  .graph-image{
+    display: block;
+    width: 85vw;
+    margin: 10px auto 20px;
+  }
+
 }
