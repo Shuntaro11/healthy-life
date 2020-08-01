@@ -41,7 +41,7 @@ class MealController extends Controller
         $height = 0;
 
         foreach ($body_values as $value) {
-            array_push($days,$value->date);
+            array_push($days,$value->date->format('n/j'));
             array_push($bmis,$value->bmi);
             $height = $value->height;
         }
@@ -159,7 +159,7 @@ class MealController extends Controller
         $height = 0;
 
         foreach ($body_values as $value) {
-            array_push($days,$value->date);
+            array_push($days,$value->date->format('n/j'));
             array_push($bmis,$value->bmi);
             $height = $value->height;
         }
@@ -263,7 +263,7 @@ class MealController extends Controller
         $height = 0;
 
         foreach ($body_values as $value) {
-            array_push($days,$value->date);
+            array_push($days,$value->date->format('n/j'));
             array_push($bmis,$value->bmi);
             $height = $value->height;
         }

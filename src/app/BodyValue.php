@@ -10,6 +10,10 @@ class BodyValue extends Model
         'date', 'weight', 'height', 'bmi', 'user_id'
     ];
 
+    protected $dates = [
+        'date'
+    ];
+
     public function user()
     {
         return $this->belongsTo('App\User');

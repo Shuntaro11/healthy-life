@@ -21,3 +21,6 @@
 
 /* レシピ投稿画面 */
 @import 'post-create.css';
+
+/* 登録フォーム遷移用画面 */
+@import 'confirm.css';

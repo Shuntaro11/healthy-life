@@ -14,7 +14,7 @@
 Route::get('/', 'PostController@index')->name('top');
 
 Route::put('users', 'UserController@update');
-Route::get('users', 'UserController@confirm');
+Route::get('users/confirm', 'UserController@confirm');
 
 Route::get('/posts/search', 'PostController@search')->name('posts.search');
 
