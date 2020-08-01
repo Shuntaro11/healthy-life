@@ -8,7 +8,7 @@
 }
 .bmi-container{
   height: 100%;
-  border: solid 1px rgb(201, 197, 197);
+  border: solid 2px #3d4f67;
   border-radius: 3px;
   background-color: white;
   padding: 15px;
@@ -76,7 +76,8 @@
 .ate-nutrition-table{
   margin: 20px auto 50px;
   width: 950px;
-  border: 1px solid dimgray;
+  border: solid 2px #3d4f67;
+  border-radius: 3px;
   overflow: hidden;
 }
 .ate-table-row{
@@ -87,6 +88,7 @@
 .first-row{
   border: none;
 }
+
 .ate-table-cell{
   width: 100px;
   text-align: center;
@@ -94,13 +96,21 @@
   border-left: 1px solid dimgray;
   font-size: 13px;
   line-height: 30px;
+  color: #df5f4a;
+  font-weight: bold;
 }
+
 .ate-table-cell-left{
   border: none;
 }
 .left-cell{
   width: 50px;
   border: none;
+  color: #212529;
+  font-weight: normal;
+}
+.first-row .ate-table-cell{
+  color: #212529;
 }
 
 .ate-index{
@@ -108,21 +118,22 @@
   width: 900px;
   max-height: 300px;
   overflow-y: scroll;
-  border: 1px solid dimgray;
   background: whitesmoke;
   border-top: none;
 }
 .ate-index-row{
   width: 900px;
   display: flex;
-  border-top: 1px solid dimgray;
-  border-bottom: 1px solid dimgray;
+  border: solid 2px #3d4f67;
+  border-radius: 3px;
   background: white;
 }
 .ate-index-row-first{
   margin: 20px auto 0;
   width: 900px;
-  border: 1px solid dimgray;
+}
+.ate-index-row-first .ate-table-cell{
+  color: #212529;
 }
 .ate-food-name{
   font-size: 15px;

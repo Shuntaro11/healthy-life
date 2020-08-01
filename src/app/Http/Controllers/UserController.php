@@ -119,4 +119,15 @@ class UserController extends Controller
 
         return redirect('/');
     }
+
+    public function confirm ()
+    {
+        if ( Auth::check() ) {
+
+            return redirect('/');
+
+        }
+        
+        return view('user.confirm');
+    }
 }
