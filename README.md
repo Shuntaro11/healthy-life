@@ -28,18 +28,31 @@
 
 ### トップ画面
 
+- 新着レシピ一覧画面
+- ゲストユーザーもアクセス可能
+- ゲストユーザーはレシピ詳細、ユーザー詳細のみに遷移可能
+
 ![healthylifeimage1](https://user-images.githubusercontent.com/59483718/89257342-eecf7800-d660-11ea-8c5b-9546cd464ff8.jpg)
 
 
 ### ユーザーマイページ
+
+- 各ユーザーの詳細ページ
+- 各ユーザーの投稿一覧が表示される
+- ユーザー自身のページではプロフィールが編集できる
+
 ![healthylifeimage2](https://user-images.githubusercontent.com/59483718/89257010-4e795380-d660-11ea-92f4-19b2fb2beda1.jpg)
 
 
-### グラフによるBMI値管理
+### グラフによるBMI値管理(マイデータ画面)
+
+- 身長と体重を登録することで日々のBMI値をグラフで管理できる
+
 <img width="717" alt="bmi-graph-image" src="https://user-images.githubusercontent.com/59483718/89257091-7799e400-d660-11ea-84c3-def354b38dc2.png">
 
 
-### 摂取栄養素の視覚化
+### 摂取栄養素の視覚化(マイデータ画面)
+
 <img width="903" alt="ate-graph-image" src="https://user-images.githubusercontent.com/59483718/89257072-6cdf4f00-d660-11ea-9cd1-29545642317e.png">
 
 
@@ -62,6 +75,11 @@
 ## 使用した言語
 
 - PHP(Laravel)、HTML、CSS、javascript(Vue.js,jQuery,chart.js)
+
+## RE図
+
+<img width="1097" alt="healthylife-er" src="https://user-images.githubusercontent.com/59483718/89265672-cc912680-d66f-11ea-8b0c-5f7c46f31183.png">
+
 
 ## 今後実装したい機能、改善点
 
