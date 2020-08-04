@@ -28,18 +28,18 @@
 
 ### トップ画面
 
-- 新着レシピ一覧
 ![healthylifeimage1](https://user-images.githubusercontent.com/59483718/89257342-eecf7800-d660-11ea-8c5b-9546cd464ff8.jpg)
 
-- ユーザーマイページ
+
+### ユーザーマイページ
 ![healthylifeimage2](https://user-images.githubusercontent.com/59483718/89257010-4e795380-d660-11ea-92f4-19b2fb2beda1.jpg)
 
 
-- グラフによるBMI値管理
+### グラフによるBMI値管理
 <img width="717" alt="bmi-graph-image" src="https://user-images.githubusercontent.com/59483718/89257091-7799e400-d660-11ea-84c3-def354b38dc2.png">
 
 
-- 摂取栄養素の視覚化
+### 摂取栄養素の視覚化
 <img width="903" alt="ate-graph-image" src="https://user-images.githubusercontent.com/59483718/89257072-6cdf4f00-d660-11ea-9cd1-29545642317e.png">
 
 
